@@ -1,3 +1,6 @@
 title: Michelle Navarro
 description: Hello!
-
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
