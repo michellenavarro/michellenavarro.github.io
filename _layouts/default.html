@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  {% include head.html %}
-</head>
-<body class="font-sans text-gray-800">
-  {% include header.html %}
-  <main>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config for colors/fonts -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#6B21A8', // deep purple
+              'brand-light': '#8B5CF6',
+              'brand-dark': '#4C1D95',
+            },
+            fontFamily: {
+              'sans': ['Inter', 'system-ui', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 font-sans min-h-screen">
     {{ content }}
-  </main>
-  {% include footer.html %}
-</body>
+  </body>
 </html>

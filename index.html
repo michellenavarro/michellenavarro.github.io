@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michelle Navarro</title>
+---
+layout: default
+title: Michelle Navarro
+---
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind config for colors/fonts -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: '#6B21A8', // deep purple
-              'brand-light': '#8B5CF6',
-              'brand-dark': '#4C1D95',
-            },
-            fontFamily: {
-              'sans': ['Inter', 'system-ui', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900 font-sans min-h-screen">
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
   <!-- Background decoration -->
   <div class="absolute inset-0 bg-gradient-to-br from-brand/5 to-brand-light/10"></div>
@@ -122,10 +95,7 @@
 <footer class="py-8 bg-gray-900 text-white text-center">
   <div class="max-w-6xl mx-auto px-6">
     <p class="text-gray-400">
-      &copy; 2025 Michelle Navarro. All rights reserved.
+      &copy; {{ site.time | date: "%Y" }} Michelle Navarro. All rights reserved.
     </p>
   </div>
 </footer>
-
-  </body>
-</html>
