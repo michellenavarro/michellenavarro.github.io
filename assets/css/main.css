@@ -1,0 +1,21 @@
+/* ============================================================================
+   MAIN CSS FILE - IMPORTS ALL MODULAR STYLES
+   ============================================================================ */
+
+/* Import base styles and CSS variables */
+@import 'base.css';
+
+/* Import component styles */
+@import 'components.css';
+
+/* Import section styles */
+@import 'sections.css';
+
+/* Import navigation styles */
+@import 'navigation.css';
+
+/* Import animation styles */
+@import 'animations.css';
+
+/* Import responsive styles */
+@import 'responsive.css';
