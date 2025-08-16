@@ -1,101 +1,176 @@
 ---
 layout: default
-title: Michelle Navarro
+title: Michelle Navarro - Senior Software Engineer
 ---
 
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 bg-gradient-to-br from-brand/5 to-brand-light/10"></div>
-  <div class="absolute top-20 left-20 w-72 h-72 bg-brand/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 right-20 w-96 h-96 bg-brand-light/10 rounded-full blur-3xl"></div>
-  
-  <!-- Main content -->
-  <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-    <h1 class="text-6xl md:text-8xl font-bold text-brand mb-6 tracking-tight">
-      Michelle Navarro
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-      Software Engineer passionate about creating innovative solutions and building amazing user experiences
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button class="px-8 py-4 bg-brand hover:bg-brand-dark text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-        Get In Touch
-      </button>
-      <button class="px-8 py-4 border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
-        View Projects
-      </button>
+<section class="hero" id="hero">
+    <div class="hero-background">
+        <div class="hero-bg-shape hero-bg-shape-1"></div>
+        <div class="hero-bg-shape hero-bg-shape-2"></div>
     </div>
-  </div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <span class="hero-name">Michelle Navarro</span>
+                </h1>
+                <p class="hero-description">
+                    I'm a Senior Software Engineer based in Los Angeles with expertise in full stack development, frontend engineering, and AI-powered solutions. I build scalable, user-centric products that blend cutting-edge technology with thoughtful design.
+                </p>
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-chevron"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- About Section -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        I'm a dedicated software engineer with a passion for clean code, user-centered design, and innovative problem-solving.
-      </p>
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+                <h2 class="section-title">About</h2>
+                <div class="about-paragraphs">
+                    <p class="about-paragraph">
+                        With over six years of professional experience, I've worked on projects ranging from generative AI tools that drive millions in ad spend, to intuitive dashboards that help publishers understand their audiences. My background spans React, Redux, Node.js, Java Spring Boot, MySQL and microservices.
+                    </p>
+                    <p class="about-paragraph">
+                        Outside of work, I'm deeply interested in the intersection of technology, psychology, and design.
+                    </p>
+                </div>
+            </div>
+            <div class="about-image" data-aos="fade-left" data-aos-delay="400">
+                <div class="profile-picture">
+                    <div class="profile-placeholder">
+                        <span class="profile-initials">MN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
-        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-          </svg>
+</section>
+
+<!-- Work Section -->
+<section class="work" id="work">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Work</h2>
+        <div class="work-grid">
+            <div class="work-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="work-card-content">
+                    <h3 class="work-card-title">Generative AI Prompt Helper</h3>
+                    <p class="work-card-description">
+                        Built and scaled a React + Spring Boot application that powers AI-driven content generation tools, processing millions of requests and driving significant ad revenue growth.
+                    </p>
+                    <div class="work-card-arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="work-card-content">
+                    <h3 class="work-card-title">Notification Flow & A/B Testing Infrastructure</h3>
+                    <p class="work-card-description">
+                        Productized, scaled, and documented a Node.js web crawler and notification system that improved user engagement through intelligent A/B testing and personalized content delivery.
+                    </p>
+                    <div class="work-card-arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="work-card-content">
+                    <h3 class="work-card-title">Analytics & Behavior Tracking</h3>
+                    <p class="work-card-description">
+                        Implemented comprehensive data pipelines from frontend events to backend analytics, enabling data-driven decision making and user behavior insights across multiple platforms.
+                    </p>
+                    <div class="work-card-arrow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Full-Stack Development</h3>
-        <p class="text-gray-600">Building robust web applications from frontend to backend</p>
-      </div>
-      
-      <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
-        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile Development</h3>
-        <p class="text-gray-600">Creating intuitive mobile experiences for iOS and Android</p>
-      </div>
-      
-      <div class="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
-        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Performance Optimization</h3>
-        <p class="text-gray-600">Optimizing applications for speed and efficiency</p>
-      </div>
     </div>
-  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Skills</h2>
+        
+        <div class="skills-categories" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-category">Frontend</div>
+            <div class="skill-category">Backend</div>
+            <div class="skill-category">Data & Analytics</div>
+            <div class="skill-category">Infrastructure & Tools</div>
+            <div class="skill-category">Specialties</div>
+        </div>
+        
+        <div class="skills-grid" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Redux</div>
+            <div class="skill-tag">React Native</div>
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">CSS</div>
+            <div class="skill-tag">Jest</div>
+            <div class="skill-tag">Vertica</div>
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Spring Boot</div>
+            <div class="skill-tag">Ruby on Rails</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">Google Analytics</div>
+        </div>
+    </div>
 </section>
 
 <!-- Contact Section -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
-    <p class="text-xl text-gray-600 mb-8">
-      I'm always interested in new opportunities and exciting projects
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:hello@michellenavarro.com" class="px-8 py-4 bg-brand hover:bg-brand-dark text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-        Send Message
-      </a>
-      <a href="#" class="px-8 py-4 border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
-        Download Resume
-      </a>
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-content" data-aos="fade-up">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-description">
+                I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together to build something amazing.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:hello@michellenavarro.com" class="btn btn-primary">
+                    <span>Get In Touch</span>
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 8L10 15L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <span>Download Resume</span>
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H12L19 10V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 3V10H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-8 bg-gray-900 text-white text-center">
-  <div class="max-w-6xl mx-auto px-6">
-    <p class="text-gray-400">
-      &copy; {{ site.time | date: "%Y" }} Michelle Navarro. All rights reserved.
-    </p>
-  </div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-text">&copy; {{ site.time | date: "%Y" }} Michelle Navarro. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">LinkedIn</a>
+                <a href="#" class="footer-link">GitHub</a>
+                <a href="#" class="footer-link">Twitter</a>
+            </div>
+        </div>
+    </div>
 </footer>
