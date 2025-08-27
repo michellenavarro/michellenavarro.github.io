@@ -53,10 +53,11 @@ class Animations {
     }
     
     setupSkillTagAnimations() {
-        this.skillTags.forEach(tag => {
-            tag.addEventListener('mouseenter', this.handleSkillTagHover.bind(this));
-            tag.addEventListener('mouseleave', this.handleSkillTagLeave.bind(this));
-        });
+        // Removed custom JavaScript hover effects to let CSS handle styling consistently
+        // this.skillTags.forEach(tag => {
+        //     tag.addEventListener('mouseenter', this.handleSkillTagHover.bind(this));
+        //     tag.addEventListener('mouseleave', this.handleSkillTagLeave.bind(this));
+        // });
     }
     
     handleWorkCardHover(event) {
@@ -70,16 +71,17 @@ class Animations {
         card.style.transform = 'translateY(0) scale(1)';
     }
     
-    handleSkillTagHover(event) {
-        const tag = event.currentTarget;
-        tag.style.transform = 'scale(1.1) rotate(2deg)';
-        tag.style.transition = `transform ${ANIMATION.DURATION.FAST}ms ${ANIMATION.EASING.EASE_OUT}`;
-    }
+    // Removed skill tag hover handlers to let CSS handle styling
+    // handleSkillTagHover(event) {
+    //     const tag = event.currentTarget;
+    //     tag.style.transform = 'scale(1.1) rotate(2deg)';
+    //     tag.style.transition = `transform ${ANIMATION.DURATION.FAST}ms ${ANIMATION.EASING.EASE_OUT}`;
+    // }
     
-    handleSkillTagLeave(event) {
-        const tag = event.currentTarget;
-        tag.style.transform = 'scale(1) rotate(0deg)';
-    }
+    // handleSkillTagLeave(event) {
+    //     const tag = event.currentTarget;
+    //     tag.style.transform = 'scale(1) rotate(0deg)';
+    // }
     
     setupParallaxEffects() {
         // Add CSS for parallax animation

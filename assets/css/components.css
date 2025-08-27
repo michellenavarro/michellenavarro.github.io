@@ -112,26 +112,7 @@
 }
 
 /* Skill Components */
-.skill-category {
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-primary);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    text-align: center;
-    font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-sm);
-    cursor: pointer;
-    transition: var(--transition-normal);
-}
-
-.skill-category:hover {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-    transform: translateY(-2px);
-}
-
+.skill-category,
 .skill-tag {
     background: var(--color-background);
     border: 1px solid var(--color-border);
@@ -143,13 +124,26 @@
     font-size: var(--font-size-sm);
     cursor: pointer;
     transition: var(--transition-normal);
+    transform: none !important;
 }
 
+.skill-category:hover,
 .skill-tag:hover {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
-    transform: scale(1.05);
+    transform: translateY(-2px) !important;
+}
+
+.skill-category:active,
+.skill-tag:active,
+.skill-category:focus,
+.skill-tag:focus {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: translateY(-1px) !important;
+    outline: none;
 }
 
 /* Profile Picture Component */
