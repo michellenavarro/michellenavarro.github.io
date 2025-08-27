@@ -143,16 +143,16 @@
 .skills-categories {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-3xl);
     flex-wrap: wrap;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: var(--spacing-md);
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
