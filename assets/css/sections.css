@@ -140,13 +140,12 @@
     background: var(--color-background-secondary);
 }
 
-.skills-grid {
+.skills-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-md);
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
     margin: 0 auto;
-    justify-items: center;
 }
 
 /* Contact Section */

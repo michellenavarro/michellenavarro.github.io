@@ -9,7 +9,7 @@ class Animations {
     constructor() {
         this.heroShapes = document.querySelectorAll('.hero-bg-shape');
         this.workCards = document.querySelectorAll('.work-card');
-        this.skillItems = document.querySelectorAll('.skill-item');
+        this.skillCategoryCards = document.querySelectorAll('.skill-category-card');
         
         this.init();
     }
@@ -38,8 +38,8 @@ class Animations {
         // Work card hover effects
         this.setupWorkCardAnimations();
         
-        // Skill item hover effects
-        this.setupSkillItemAnimations();
+        // Skill category card hover effects
+        this.setupSkillCategoryCardAnimations();
         
         // Parallax effect for hero background shapes
         window.addEventListener('scroll', throttle(this.handleParallax.bind(this), 16));
@@ -52,12 +52,9 @@ class Animations {
         });
     }
     
-    setupSkillItemAnimations() {
-        // Removed custom JavaScript hover effects to let CSS handle styling consistently
-        // this.skillItems.forEach(item => {
-        //     item.addEventListener('mouseenter', this.handleSkillItemHover.bind(this));
-        //     item.addEventListener('mouseleave', this.handleSkillItemLeave.bind(this));
-        // });
+    setupSkillCategoryCardAnimations() {
+        // Skill category cards use CSS-only hover effects for consistency
+        // No additional JavaScript animations needed
     }
     
     handleWorkCardHover(event) {

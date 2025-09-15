@@ -45,8 +45,8 @@
     }
     
     .skills-categories {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
     
     .contact-buttons {
@@ -128,8 +128,22 @@
         padding: var(--spacing-lg);
     }
     
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    .skill-category-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .skill-category-title {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .skill-tags {
+        gap: var(--spacing-xs);
+    }
+    
+    .skill-tag {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-xs);
     }
 }
 
