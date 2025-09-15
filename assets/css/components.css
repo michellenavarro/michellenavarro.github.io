@@ -112,8 +112,7 @@
 }
 
 /* Skill Components */
-.skill-category,
-.skill-tag {
+.skill-item {
     background: var(--color-background);
     border: 1px solid var(--color-border);
     color: var(--color-text-primary);
@@ -127,18 +126,15 @@
     transform: none !important;
 }
 
-.skill-category:hover,
-.skill-tag:hover {
+.skill-item:hover {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
     transform: translateY(-2px) !important;
 }
 
-.skill-category:active,
-.skill-tag:active,
-.skill-category:focus,
-.skill-tag:focus {
+.skill-item:active,
+.skill-item:focus {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);

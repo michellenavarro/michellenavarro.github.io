@@ -140,14 +140,6 @@
     background: var(--color-background-secondary);
 }
 
-.skills-categories {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-3xl);
-    flex-wrap: wrap;
-}
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
