@@ -152,29 +152,40 @@
     text-align: center;
 }
 
-.skill-tags {
+.skill-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    align-items: center;
     justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
 }
 
-.skill-tag {
+.tech-item {
     background: var(--color-background-secondary);
     border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius-md);
-    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
     transition: var(--transition-fast);
 }
 
-.skill-tag:hover {
+.tech-item:hover {
     background: var(--color-primary);
     color: white;
     border-color: var(--color-primary);
     transform: translateY(-1px);
+}
+
+.skill-description {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    text-align: center;
+    font-style: italic;
+    margin: 0;
 }
 
 /* Profile Picture Component */

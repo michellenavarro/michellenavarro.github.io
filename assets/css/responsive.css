@@ -137,13 +137,18 @@
         margin-bottom: var(--spacing-md);
     }
     
-    .skill-tags {
+    .skill-tech-stack {
         gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
     }
     
-    .skill-tag {
+    .tech-item {
         font-size: var(--font-size-xs);
         padding: var(--spacing-xs) var(--spacing-xs);
+    }
+    
+    .skill-description {
+        font-size: var(--font-size-xs);
     }
 }
 
