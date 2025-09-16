@@ -99,17 +99,6 @@
     margin-bottom: var(--spacing-lg);
 }
 
-.work-card-arrow {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: var(--color-primary);
-    transition: var(--transition-normal);
-}
-
-.work-card:hover .work-card-arrow {
-    transform: translateX(4px);
-}
 
 /* Skill Components */
 .skill-category-card {
