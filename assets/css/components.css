@@ -220,12 +220,21 @@
 }
 
 .scroll-chevron {
+    display: block;
     width: 20px;
     height: 20px;
     border-right: 2px solid var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
     transform: rotate(45deg);
     animation: bounce 2s infinite;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-decoration: none;
+}
+
+.scroll-chevron:hover {
+    border-color: var(--color-primary-dark);
+    transform: rotate(45deg) scale(1.1);
 }
 
 @keyframes bounce {
