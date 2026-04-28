@@ -1,179 +1,200 @@
----
-layout: default
-title: Michelle Navarro - Senior Software Engineer
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michelle Navarro — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <div class="hero-background">
-        <div class="hero-bg-shape hero-bg-shape-1"></div>
-        <div class="hero-bg-shape hero-bg-shape-2"></div>
+  <nav class="nav">
+    <span class="nav-logo">MN</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="contour-lines"></div>
     </div>
-    
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
-                <h1 class="hero-title">
-                    <span class="hero-greeting">Hi, I'm</span>
-                    <span class="hero-name">Michelle Navarro</span>
-                </h1>
-                <p class="hero-description">
-                    I'm a full-stack engineer who cares as much about collaboration and impact as clean code.
-                </p>
-                <div class="hero-scroll-indicator">
-                    <a href="#about" class="scroll-chevron"></a>
-                </div>
-            </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Software Engineer — Los Angeles, CA</p>
+      <h1 class="hero-name">Michelle<br/><em>Navarro</em></h1>
+      <p class="hero-tagline">Building reliable systems for a world that needs them.</p>
+      <div class="hero-tags">
+        <span class="tag">Java / Spring Boot</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Data Pipelines</span>
+        <span class="tag tag-accent">Climate Tech</span>
+        <span class="tag">GIS — in progress</span>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>↓</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section section-about">
+      <div class="container two-col">
+        <div class="about-label">
+          <span class="section-label">About</span>
         </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="about" id="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-                <h2 class="section-title">About</h2>
-                <div class="about-paragraphs">
-                    <p class="about-paragraph">
-                        I started out as a frontend engineer, but my curiosity soon led me to backend systems, data pipelines, and full-stack development. Along the way, I’ve worked on everything from consumer-facing interfaces and mobile apps to internal tools, monitoring systems, and even experimental TV applications, always focusing on value and usability.
-                    </p>
-                    <p class="about-paragraph">
-                        What excites me most is building technology that’s not just elegant but impactful. I love working closely with stakeholders to ensure we’re solving the right problems, mentoring teammates to strengthen both technical and collaboration skills, and measuring results so we can iterate and improve. I enjoy bridging technical depth with business context and bringing teams together to deliver at scale.
-                    </p>
-                    <p class="about-paragraph">
-                        Currently, I’m especially excited about AI-assisted development and human-centered engineering, and I’m looking for opportunities to make a positive difference alongside open, creative teams.
-                    </p>
-                </div>
-            </div>
-            <div class="about-image" data-aos="fade-left" data-aos-delay="400">
-                <div class="profile-picture">
-                    <div class="profile-placeholder">
-                        <span class="profile-initials">MN</span>
-                    </div>
-                </div>
-            </div>
+        <div class="about-body">
+          <p class="about-lead">I'm a full-stack engineer with 6+ years shipping production-grade systems — data pipelines, analytics platforms, client-facing APIs, and LLM-powered products.</p>
+          <p>I spent most of my career in ad tech at Taboola, building things at scale with Java, Spring Boot, React, and Airflow. I was good at it. And in late 2023, I made a deliberate decision to step back and figure out what I actually wanted my work to be about.</p>
+          <p>That time led me somewhere I didn't expect. I reconnected with the natural world — maps, land, energy systems, the physical infrastructure underneath the data. I started pursuing a <strong>GIS certificate at Pasadena City College</strong> and enrolled in environmental data science coursework. Not as a resume move. Because I genuinely care about what happens to the planet, and I want to build things that help.</p>
+          <p>Now I'm focused on applying the engineering skills I've built over six years to <strong>climate tech, clean energy, and environmental data</strong>. That's where I'm headed, and I'm not hedging about it.</p>
+          <a href="mailto:michellenavarro83@gmail.com" class="btn">Get in touch →</a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Work Section -->
-<section class="work" id="work">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Selected Professional Work</h2>
+    <section id="work" class="section section-work">
+      <div class="container">
+        <span class="section-label">Selected Work</span>
+        <h2 class="section-title">What I've built</h2>
+
         <div class="work-grid">
-            <div class="work-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="work-card-content">
-                    <h3 class="work-card-title">Generative AI Prompt Helper</h3>
-                    <p class="work-card-description">
-                        Collaborated on building and scaling a React + Spring Boot platform for AI-powered content generation, focusing on performance improvements that enabled millions of requests and supported revenue growth.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="work-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="work-card-content">
-                    <h3 class="work-card-title">Notification Flow & A/B Testing Infrastructure</h3>
-                    <p class="work-card-description">
-                        Productized and scaled a notification system with integrated A/B testing, enabling personalized content delivery that meaningfully boosted user engagement. Documented processes to ensure reliability and team alignment.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="work-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="work-card-content">
-                    <h3 class="work-card-title">Analytics & Behavior Tracking</h3>
-                    <p class="work-card-description">
-                        Built end-to-end data pipelines connecting frontend events to backend analytics, turning raw user interactions into actionable insights that informed product decisions across multiple platforms.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Skills Section -->
-<section class="skills" id="skills">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Skills</h2>
-        
-        <div class="skills-categories" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-category-card">
-                <h3 class="skill-category-title">Frontend Development</h3>
-                <div class="skill-tech-stack">
-                    <span class="tech-item">React</span>
-                    <span class="tech-item">React Native</span>
-                    <span class="tech-item">Redux</span>
-                    <span class="tech-item">JavaScript</span>
-                    <span class="tech-item">HTML/CSS</span>
-                </div>
-                <p class="skill-description">Building responsive, interactive, user-first interfaces.</p>
+          <article class="work-card work-card-featured">
+            <div class="work-card-meta">
+              <span class="work-tag">Java · Spring Boot · React · LLM</span>
+              <span class="work-company">Taboola</span>
             </div>
-            
-            <div class="skill-category-card">
-                <h3 class="skill-category-title">Backend & Systems</h3>
-                <div class="skill-tech-stack">
-                    <span class="tech-item">Node.js</span>
-                    <span class="tech-item">Java + Spring Boot</span>
-                    <span class="tech-item">REST APIs</span>
-                    <span class="tech-item">MySQL</span>
-                    <span class="tech-item">Vertica</span>
-                </div>
-                <p class="skill-description">Designing scalable, reliable full-stack systems.</p>
-            </div>
-            
-            <div class="skill-category-card">
-                <h3 class="skill-category-title">Modern AI & Data Workflows</h3>
-                <div class="skill-tech-stack">
-                    <span class="tech-item">AI-assisted Coding</span>
-                    <span class="tech-item">LLM Integrations</span>
-                    <span class="tech-item">Monitoring</span>
-                    <span class="tech-item">Google Analytics</span>
-                    <span class="tech-item">Airflow</span>
-                </div>
-                <p class="skill-description">Accelerating development and insights with AI, automation, and data-driven workflows.</p>
-            </div>
-            
-        </div>
-    </div>
-</section>
+            <h3>Generative AI Prompt Optimization Tool</h3>
+            <p>Built the React frontend and Java Spring Boot backend for Taboola's generative AI prompt helper — end to end. The tool became instrumental in driving over 50% of ad spend through Taboola's AI pipeline. One of the company's highest-leverage products while I was there.</p>
+          </article>
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="contact-content" data-aos="fade-up">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-description">
-                I'm open to new opportunities — let’s talk about how we can work together.
-            </p>
-            <div class="contact-buttons">
-                <a href="mailto:michellenavarro83@gmail.com" class="btn btn-primary">
-                    <span>Get In Touch</span>
-                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M2.5 5L10 10L17.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <rect x="2.5" y="5" width="15" height="10" rx="1.25" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </a>
-                <a href="/MichelleNavarroResume.pdf" class="btn btn-primary" target="_blank">
-                    <span>Resume</span>
-                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H12L19 10V21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 3V10H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+          <article class="work-card">
+            <div class="work-card-meta">
+              <span class="work-tag">Airflow · MySQL · Vertica · Tableau</span>
+              <span class="work-company">Taboola</span>
             </div>
-        </div>
-    </div>
-</section>
+            <h3>Event-Driven Analytics Pipelines</h3>
+            <p>Architected end-to-end data pipelines with Airflow, connecting frontend instrumentation to MySQL and Vertica tables, surfacing real-time behavioral data in Tableau and Google Analytics dashboards across multiple product surfaces.</p>
+          </article>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <p class="footer-text">&copy; {{ site.time | date: "%Y" }} Michelle Navarro. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://github.com/michellenavarro" class="footer-link">GitHub</a>
+          <article class="work-card">
+            <div class="work-card-meta">
+              <span class="work-tag">Airflow · Java · REST APIs</span>
+              <span class="work-company">Taboola</span>
             </div>
+            <h3>Campaign Alert Notification System</h3>
+            <p>Designed and shipped an Airflow-orchestrated notification system supporting multiple campaign alert types across user segments — collaborating with international teams across timezones. Lifted adoption of Call To Action and Ad Description features by 15%+.</p>
+          </article>
+
+          <article class="work-card">
+            <div class="work-card-meta">
+              <span class="work-tag">OAuth · Node.js · Chrome Extension</span>
+              <span class="work-company">Taboola</span>
+            </div>
+            <h3>Authentication Refactor — Refresh Token Flow</h3>
+            <p>Refactored the Newsroom Chrome extension authentication layer to support OAuth refresh tokens, eliminating daily session timeouts that were frustrating users. Improved retention by 30%. A small surface area with real user impact.</p>
+          </article>
+
+          <article class="work-card">
+            <div class="work-card-meta">
+              <span class="work-tag">Node.js · ML · Content Review</span>
+              <span class="work-company">Taboola</span>
+            </div>
+            <h3>Automated Content Review Crawler</h3>
+            <p>Built and productized a Node.js web scraper for automated content review — cutting ad approval time by 35% and producing cleaner training data for downstream ML models.</p>
+          </article>
+
+          <article class="work-card work-card-climate">
+            <div class="work-card-meta">
+              <span class="work-tag">ArcGIS · QGIS · R · Spatial Analysis</span>
+              <span class="work-company">In progress</span>
+            </div>
+            <h3>GIS & Environmental Data — ongoing</h3>
+            <p>Currently completing a GIS & Technology Certificate at Pasadena City College (spatial analysis, cartographic design, environmental GIS) alongside data science coursework for ecologists through the University of Edinburgh. Building the foundation for climate-focused engineering work.</p>
+          </article>
+
         </div>
-    </div>
-</footer>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-skills">
+      <div class="container">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">What I work with</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Backend & APIs</h4>
+            <ul>
+              <li>Java · Spring Boot</li>
+              <li>RESTful API design</li>
+              <li>Node.js · Ruby on Rails</li>
+              <li>OAuth 2.0 · Auth flows</li>
+              <li>JUnit · Jest · Testing</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Frontend</h4>
+            <ul>
+              <li>React · Redux</li>
+              <li>React Native</li>
+              <li>JavaScript · HTML · CSS</li>
+              <li>Chrome Extensions</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Data & Pipelines</h4>
+            <ul>
+              <li>Airflow</li>
+              <li>MySQL · Vertica</li>
+              <li>PostgreSQL (familiar)</li>
+              <li>Tableau · Google Analytics</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Observability</h4>
+            <ul>
+              <li>Grafana · PagerDuty</li>
+              <li>Sensu · Puppet</li>
+              <li>Monitoring & alerting</li>
+            </ul>
+          </div>
+          <div class="skill-group skill-group-climate">
+            <h4>Climate & GIS <em>— in progress</em></h4>
+            <ul>
+              <li>ArcGIS · QGIS</li>
+              <li>Spatial analysis</li>
+              <li>Environmental data</li>
+              <li>R · Statistical modeling</li>
+              <li>Cartographic design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="container contact-inner">
+        <h2 class="contact-heading">Let's build something<br/><em>that matters.</em></h2>
+        <p class="contact-sub">I'm focused on opportunities in climate tech, clean energy, and environmental data — especially where my background in APIs, pipelines, and backend systems is a fit.</p>
+        <div class="contact-links">
+          <a href="mailto:michellenavarro83@gmail.com" class="btn btn-large">michellenavarro83@gmail.com →</a>
+          <a href="https://github.com/michellenavarro" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Michelle Navarro</span>
+    <a href="https://github.com/michellenavarro" target="_blank" rel="noopener">GitHub →</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
