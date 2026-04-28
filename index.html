@@ -3,196 +3,330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michelle Navarro — Software Engineer</title>
+  <title>Michelle Navarro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <nav class="nav">
-    <span class="nav-logo">MN</span>
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-mark">MN</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#maps">Maps</a></li>
+      <li><a href="#outside">Outside</a></li>
+      <li><a href="#contact" class="nav-cta">Say hello</a></li>
     </ul>
+    <button class="nav-burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
-    <div class="hero-bg">
-      <div class="contour-lines"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Software Engineer — Los Angeles, CA</p>
-      <h1 class="hero-name">Michelle<br/><em>Navarro</em></h1>
-      <p class="hero-tagline">Building reliable systems for a world that needs them.</p>
-      <div class="hero-tags">
-        <span class="tag">Java / Spring Boot</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">Data Pipelines</span>
-        <span class="tag tag-accent">Climate Tech</span>
-        <span class="tag">GIS — in progress</span>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-label">Software Engineer &mdash; Los Angeles</p>
+        <h1>
+          <span class="hero-first">Michelle</span>
+          <br/>
+          <span class="hero-last">Navarro</span>
+        </h1>
+        <p class="hero-sub">
+          I build backend systems and data pipelines.<br/>
+          I'm learning to read the land through maps.<br/>
+          I want my work to help the planet.
+        </p>
+        <div class="hero-chips">
+          <span class="chip chip-green">Climate tech</span>
+          <span class="chip">Java &middot; Spring Boot</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">GIS <em>in progress</em></span>
+        </div>
+      </div>
+      <div class="hero-coords">
+        <div class="coord-row">
+          <span class="coord-k">LAT</span>
+          <span class="coord-v">34.0522&deg; N</span>
+        </div>
+        <div class="coord-row">
+          <span class="coord-k">LON</span>
+          <span class="coord-v">118.2437&deg; W</span>
+        </div>
+        <div class="coord-row">
+          <span class="coord-k">ELEV</span>
+          <span class="coord-v">71 m</span>
+        </div>
+        <hr class="coord-hr"/>
+        <div class="coord-row">
+          <span class="coord-k">STATUS</span>
+          <span class="coord-v coord-active">Open to work</span>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>↓</span>
-    </div>
+    <p class="hero-scroll">scroll &darr;</p>
   </header>
 
-  <main>
-    <section id="about" class="section section-about">
-      <div class="container two-col">
-        <div class="about-label">
-          <span class="section-label">About</span>
-        </div>
-        <div class="about-body">
-          <p class="about-lead">I'm a full-stack engineer with 6+ years shipping production-grade systems — data pipelines, analytics platforms, client-facing APIs, and LLM-powered products.</p>
-          <p>I spent most of my career in ad tech at Taboola, building things at scale with Java, Spring Boot, React, and Airflow. I was good at it. And in late 2023, I made a deliberate decision to step back and figure out what I actually wanted my work to be about.</p>
-          <p>That time led me somewhere I didn't expect. I reconnected with the natural world — maps, land, energy systems, the physical infrastructure underneath the data. I started pursuing a <strong>GIS certificate at Pasadena City College</strong> and enrolled in environmental data science coursework. Not as a resume move. Because I genuinely care about what happens to the planet, and I want to build things that help.</p>
-          <p>Now I'm focused on applying the engineering skills I've built over six years to <strong>climate tech, clean energy, and environmental data</strong>. That's where I'm headed, and I'm not hedging about it.</p>
-          <a href="mailto:michellenavarro83@gmail.com" class="btn">Get in touch →</a>
-        </div>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-left">
+        <span class="eyebrow">01 &mdash; About</span>
+        <h2>Engineer.<br/>Cartographer-<br/>in-training.<br/><em>Angeleno.</em></h2>
       </div>
-    </section>
-
-    <section id="work" class="section section-work">
-      <div class="container">
-        <span class="section-label">Selected Work</span>
-        <h2 class="section-title">What I've built</h2>
-
-        <div class="work-grid">
-
-          <article class="work-card work-card-featured">
-            <div class="work-card-meta">
-              <span class="work-tag">Java · Spring Boot · React · LLM</span>
-              <span class="work-company">Taboola</span>
-            </div>
-            <h3>Generative AI Prompt Optimization Tool</h3>
-            <p>Built the React frontend and Java Spring Boot backend for Taboola's generative AI prompt helper — end to end. The tool became instrumental in driving over 50% of ad spend through Taboola's AI pipeline. One of the company's highest-leverage products while I was there.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span class="work-tag">Airflow · MySQL · Vertica · Tableau</span>
-              <span class="work-company">Taboola</span>
-            </div>
-            <h3>Event-Driven Analytics Pipelines</h3>
-            <p>Architected end-to-end data pipelines with Airflow, connecting frontend instrumentation to MySQL and Vertica tables, surfacing real-time behavioral data in Tableau and Google Analytics dashboards across multiple product surfaces.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span class="work-tag">Airflow · Java · REST APIs</span>
-              <span class="work-company">Taboola</span>
-            </div>
-            <h3>Campaign Alert Notification System</h3>
-            <p>Designed and shipped an Airflow-orchestrated notification system supporting multiple campaign alert types across user segments — collaborating with international teams across timezones. Lifted adoption of Call To Action and Ad Description features by 15%+.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span class="work-tag">OAuth · Node.js · Chrome Extension</span>
-              <span class="work-company">Taboola</span>
-            </div>
-            <h3>Authentication Refactor — Refresh Token Flow</h3>
-            <p>Refactored the Newsroom Chrome extension authentication layer to support OAuth refresh tokens, eliminating daily session timeouts that were frustrating users. Improved retention by 30%. A small surface area with real user impact.</p>
-          </article>
-
-          <article class="work-card">
-            <div class="work-card-meta">
-              <span class="work-tag">Node.js · ML · Content Review</span>
-              <span class="work-company">Taboola</span>
-            </div>
-            <h3>Automated Content Review Crawler</h3>
-            <p>Built and productized a Node.js web scraper for automated content review — cutting ad approval time by 35% and producing cleaner training data for downstream ML models.</p>
-          </article>
-
-          <article class="work-card work-card-climate">
-            <div class="work-card-meta">
-              <span class="work-tag">ArcGIS · QGIS · R · Spatial Analysis</span>
-              <span class="work-company">In progress</span>
-            </div>
-            <h3>GIS & Environmental Data — ongoing</h3>
-            <p>Currently completing a GIS & Technology Certificate at Pasadena City College (spatial analysis, cartographic design, environmental GIS) alongside data science coursework for ecologists through the University of Edinburgh. Building the foundation for climate-focused engineering work.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section section-skills">
-      <div class="container">
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">What I work with</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h4>Backend & APIs</h4>
-            <ul>
-              <li>Java · Spring Boot</li>
-              <li>RESTful API design</li>
-              <li>Node.js · Ruby on Rails</li>
-              <li>OAuth 2.0 · Auth flows</li>
-              <li>JUnit · Jest · Testing</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Frontend</h4>
-            <ul>
-              <li>React · Redux</li>
-              <li>React Native</li>
-              <li>JavaScript · HTML · CSS</li>
-              <li>Chrome Extensions</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Data & Pipelines</h4>
-            <ul>
-              <li>Airflow</li>
-              <li>MySQL · Vertica</li>
-              <li>PostgreSQL (familiar)</li>
-              <li>Tableau · Google Analytics</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h4>Observability</h4>
-            <ul>
-              <li>Grafana · PagerDuty</li>
-              <li>Sensu · Puppet</li>
-              <li>Monitoring & alerting</li>
-            </ul>
-          </div>
-          <div class="skill-group skill-group-climate">
-            <h4>Climate & GIS <em>— in progress</em></h4>
-            <ul>
-              <li>ArcGIS · QGIS</li>
-              <li>Spatial analysis</li>
-              <li>Environmental data</li>
-              <li>R · Statistical modeling</li>
-              <li>Cartographic design</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-contact">
-      <div class="container contact-inner">
-        <h2 class="contact-heading">Let's build something<br/><em>that matters.</em></h2>
-        <p class="contact-sub">I'm focused on opportunities in climate tech, clean energy, and environmental data — especially where my background in APIs, pipelines, and backend systems is a fit.</p>
-        <div class="contact-links">
-          <a href="mailto:michellenavarro83@gmail.com" class="btn btn-large">michellenavarro83@gmail.com →</a>
+      <div class="about-right">
+        <p class="lead">
+          I'm a full-stack engineer with 6+ years shipping production systems &mdash;
+          event-driven data pipelines, client-facing REST APIs, LLM-powered products,
+          and the observability infrastructure that keeps them honest. My core stack is
+          Java and Spring Boot, with React and Node on the frontend side.
+        </p>
+        <p>
+          In late 2023 I made a deliberate decision to step back from engineering and figure
+          out what I actually wanted my work to be about. I'd spent years building ad tech at
+          scale and I was good at it &mdash; but I wanted my skills to matter differently.
+        </p>
+        <p>
+          That time led me somewhere unexpected. I reconnected with the physical world &mdash;
+          land, water, weather, the geography underneath the data. I started a
+          <strong>GIS certificate at Pasadena City College</strong> and enrolled in environmental
+          data science coursework through the University of Edinburgh.
+          Not as a resume move. Because maps are one of the most powerful ways we make
+          sense of a world that's changing fast, and I want to be part of that.
+        </p>
+        <p>
+          I'm based in Los Angeles. I run (finished my first marathon in 2025).
+          I hike whenever I can escape the city. I'm focused on roles in
+          <strong>climate tech and clean energy</strong> where what I know how to build
+          meets work that actually matters.
+        </p>
+        <div class="btn-row">
+          <a href="MichelleNavarroResume.pdf" class="btn" target="_blank">Resume &nearr;</a>
           <a href="https://github.com/michellenavarro" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section id="software" class="section software-section">
+    <div class="container">
+      <div class="section-hd">
+        <span class="eyebrow">02 &mdash; Software</span>
+        <h2>Work &amp; Skills</h2>
+        <p class="section-intro">Six years of production engineering, mostly at Taboola. Here's what I built and what I work with.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project project-hero">
+          <div class="project-top">
+            <span class="ptag">Java &middot; Spring Boot &middot; React &middot; LLM</span>
+            <span class="pco">Taboola &mdash; 2021&ndash;23</span>
+          </div>
+          <h3>Generative AI Prompt Optimization</h3>
+          <p>Built the React frontend and Java Spring Boot backend for Taboola's generative AI prompt helper end to end. The tool became instrumental in routing over 50% of ad spend through Taboola's AI pipeline &mdash; one of the company's highest-leverage products while I was there.</p>
+        </article>
+
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Airflow &middot; MySQL &middot; Vertica &middot; Tableau</span>
+              <span class="pco">Taboola</span>
+            </div>
+            <h3>Event-Driven Analytics Pipelines</h3>
+            <p>Architected Airflow-orchestrated pipelines connecting frontend instrumentation to MySQL and Vertica, surfacing real-time behavioral data across Tableau and Google Analytics dashboards.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">OAuth 2.0 &middot; Node.js</span>
+              <span class="pco">Taboola</span>
+            </div>
+            <h3>Auth Refactor &mdash; Refresh Tokens</h3>
+            <p>Refactored the Newsroom Chrome extension auth layer to support OAuth refresh tokens, eliminating daily session timeouts. Improved user retention by 30%.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Airflow &middot; Java &middot; REST</span>
+              <span class="pco">Taboola</span>
+            </div>
+            <h3>Campaign Alert Notifications</h3>
+            <p>Designed an Airflow-orchestrated notification system for campaign alerts across multiple types and user segments, lifting feature adoption by 15%+ across timezones.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Node.js &middot; ML &middot; Automation</span>
+              <span class="pco">Taboola</span>
+            </div>
+            <h3>Automated Content Review Crawler</h3>
+            <p>Built and productized a Node.js web scraper for content review, cutting ad approval time by 35% and producing cleaner training data for downstream ML models.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="skills-block">
+        <div class="skill-group">
+          <h4>Backend &amp; APIs</h4>
+          <ul>
+            <li>Java &middot; Spring Boot</li>
+            <li>Node.js &middot; Ruby on Rails</li>
+            <li>RESTful API design</li>
+            <li>OAuth 2.0 &middot; Auth flows</li>
+            <li>JUnit &middot; Jest</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React &middot; Redux</li>
+            <li>React Native</li>
+            <li>JavaScript</li>
+            <li>HTML &middot; CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Pipelines</h4>
+          <ul>
+            <li>Airflow</li>
+            <li>MySQL &middot; Vertica</li>
+            <li>PostgreSQL</li>
+            <li>Tableau &middot; Google Analytics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Observability</h4>
+          <ul>
+            <li>Grafana &middot; PagerDuty</li>
+            <li>Sensu &middot; Puppet</li>
+            <li>Monitoring &amp; alerting</li>
+          </ul>
+        </div>
+        <div class="skill-group skill-group-climate">
+          <h4>GIS &amp; Spatial <em>in progress</em></h4>
+          <ul>
+            <li>ArcGIS &middot; QGIS</li>
+            <li>Spatial analysis</li>
+            <li>Cartographic design</li>
+            <li>Environmental GIS</li>
+            <li>R &middot; Statistical modeling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPS -->
+  <section id="maps" class="section maps-section">
+    <div class="container">
+      <div class="section-hd">
+        <span class="eyebrow">03 &mdash; Maps</span>
+        <h2>Spatial Work</h2>
+        <p class="section-intro">GIS coursework from my certificate program at Pasadena City College. Each map is a real question I wanted to answer about a place I care about.</p>
+      </div>
+
+      <figure class="map-featured">
+        <div class="map-img">
+          <img src="images/kelp-map.jpg" alt="Southern California Giant Kelp Forests Under Heat Stress, March 2026" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="map-n">01</span>
+          <div>
+            <h3>Southern California Kelp Forests Under Heat Stress</h3>
+            <p>Mapped giant kelp occurrences against NOAA sea surface temperature data to identify stress zones along the Southern California coast. The red crisis boundary marks where the next generation of kelp is at risk &mdash; areas where temperatures suppress juvenile growth before die-off levels are even reached.</p>
+            <p class="map-src">Data: NOAA &middot; GBIF &middot; Natural Earth &middot; ESRI</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <div class="map-pair">
+        <figure class="map-item">
+          <div class="map-img">
+            <img src="images/fault-map.jpg" alt="Fault Lines and Population Density, Los Angeles County 2020" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="map-n">02</span>
+            <div>
+              <h3>Fault Lines &amp; Population Density, LA County</h3>
+              <p>Overlaid USGS quaternary fault data against 2020 census population density to visualize seismic exposure across the county. Historic faults run directly through the most densely populated corridors.</p>
+              <p class="map-src">Data: US Census Bureau &middot; USGS Quaternary Fault and Fold Database</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="map-item">
+          <div class="map-img">
+            <img src="images/crime-map.jpg" alt="Most Common Crime Type by LAPD Division, 2025" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="map-n">03</span>
+            <div>
+              <h3>Most Common Crime Type by LAPD Division</h3>
+              <p>Choropleth map of dominant crime categories across all LAPD divisions in 2025 using NIBRS offense data. Grand theft auto dominates much of the city; petty theft concentrates in commercial corridors.</p>
+              <p class="map-src">Data: LAPD NIBRS Offenses Dataset &middot; LAPD Divisions Boundary Layer</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTSIDE -->
+  <section id="outside" class="outside-section">
+    <div class="outside-wrap">
+      <img class="outside-img" src="images/hiking.jpg" alt="Michelle hiking in the Swiss Alps, 2023" />
+      <div class="outside-overlay">
+        <div class="outside-card">
+          <span class="eyebrow eyebrow-light">04 &mdash; Outside</span>
+          <h2>Outside<br/>the terminal</h2>
+          <p>
+            I grew up in LA so I came to mountains late &mdash; but I made up for lost time.
+            That trip to Switzerland in 2023 was when I started taking the outdoors seriously.
+            A year and a half later I ran my first marathon. Most weekends you'll find me
+            somewhere in the San Gabriels or out toward Malibu.
+          </p>
+          <p>
+            There's something about terrain that requires you to understand it &mdash;
+            where water runs, where the ridge breaks, how elevation changes the whole character
+            of a place. I think that's part of why GIS clicked for me.
+            Maps are just a way of paying attention.
+          </p>
+          <p class="outside-loc">Bernese Oberland, Switzerland &mdash; 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-inner">
+        <span class="eyebrow">05 &mdash; Contact</span>
+        <h2 class="contact-h">
+          Let's build something<br/><em>that matters.</em>
+        </h2>
+        <p class="contact-body">
+          I'm looking for roles in climate tech, clean energy, and environmental data &mdash;
+          especially where backend systems, APIs, and pipelines are core to the work.
+          If you're building infrastructure for a cleaner grid, I'd love to talk.
+        </p>
+        <a href="mailto:michellenavarro83@gmail.com" class="btn btn-large">
+          michellenavarro83@gmail.com &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
-    <span>© 2026 Michelle Navarro</span>
-    <a href="https://github.com/michellenavarro" target="_blank" rel="noopener">GitHub →</a>
+    <span>&copy; 2026 Michelle Navarro &middot; Los Angeles</span>
+    <div class="footer-links">
+      <a href="https://github.com/michellenavarro" target="_blank" rel="noopener">GitHub</a>
+      <a href="MichelleNavarroResume.pdf" target="_blank">Resume</a>
+    </div>
   </footer>
 
   <script src="main.js"></script>
