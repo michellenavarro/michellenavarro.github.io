@@ -130,17 +130,59 @@ const trailEraBtns = document.querySelectorAll('.trail-era-btn');
 const trailStops = document.querySelectorAll('.trail-stop');
 const trailSeps = document.querySelectorAll('.trail-era-sep');
 
+// Converts an element's current on-screen position to its absolute scroll target
+// within trailScroll — works regardless of offsetParent chain.
+function trailScrollTarget(el, offset = 0) {
+  const elRect = el.getBoundingClientRect();
+  const containerRect = trailScroll.getBoundingClientRect();
+  return trailScroll.scrollLeft + elRect.left - containerRect.left - offset;
+}
+
 if (trailScroll) {
-  // Click a marker to center that stop in the trail viewport
+  // ── Arrows ────────────────────────────────────────────────
+  const trailOuter = trailScroll.closest('.trail-outer');
+  if (trailOuter) {
+    const btnL = document.createElement('button');
+    btnL.className = 'scroll-arrow scroll-arrow-left';
+    btnL.innerHTML = '&#8592;';
+    btnL.setAttribute('aria-label', 'Scroll left');
+
+    const btnR = document.createElement('button');
+    btnR.className = 'scroll-arrow scroll-arrow-right';
+    btnR.innerHTML = '&#8594;';
+    btnR.setAttribute('aria-label', 'Scroll right');
+
+    trailOuter.appendChild(btnL);
+    trailOuter.appendChild(btnR);
+
+    const step = () => (trailScroll.querySelector('.trail-stop')?.offsetWidth ?? 230) + 16;
+
+    btnL.addEventListener('click', () => trailScroll.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
+    btnR.addEventListener('click', () => trailScroll.scrollBy({ left:  step() * 2, behavior: 'smooth' }));
+
+    const updateArrows = () => {
+      const atStart = trailScroll.scrollLeft <= 4;
+      const atEnd   = trailScroll.scrollLeft + trailScroll.clientWidth >= trailScroll.scrollWidth - 8;
+      btnL.hidden = atStart;
+      btnR.hidden = atEnd;
+      trailOuter.classList.toggle('trail-scroll-end', atEnd);
+    };
+
+    updateArrows();
+    trailScroll.addEventListener('scroll', updateArrows, { passive: true });
+  }
+
+  // ── Marker click → center that stop ───────────────────────
   trailStops.forEach(stop => {
     const marker = stop.querySelector('.tsm-wrap');
     if (!marker) return;
     marker.addEventListener('click', () => {
-      const center = stop.offsetLeft + stop.offsetWidth / 2;
-      trailScroll.scrollTo({ left: center - trailScroll.clientWidth / 2, behavior: 'smooth' });
+      const target = trailScrollTarget(stop) + stop.offsetWidth / 2 - trailScroll.clientWidth / 2;
+      trailScroll.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
     });
   });
 
+  // ── Era pill buttons ───────────────────────────────────────
   trailEraBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const era = btn.dataset.era;
@@ -156,7 +198,7 @@ if (trailScroll) {
         trailSeps.forEach(s => { if (s.dataset.era !== era) s.classList.add('dimmed'); });
         const anchor = document.getElementById(`trail-era-${era}`);
         if (anchor) {
-          trailScroll.scrollTo({ left: anchor.offsetLeft - 24, behavior: 'smooth' });
+          trailScroll.scrollTo({ left: Math.max(0, trailScrollTarget(anchor, 24)), behavior: 'smooth' });
         }
       }
     });

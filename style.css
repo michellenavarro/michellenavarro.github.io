@@ -321,6 +321,15 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 }
 .about-left { position: sticky; top: 6rem; }
 .about-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.about-left h2 em {
+  display: block;
+  font-size: 0.78rem;
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+}
 .about-right .lead {
   font-size: 1.1rem;
   color: var(--ink);
@@ -687,7 +696,9 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   background: linear-gradient(to right, transparent, var(--paper-warm));
   pointer-events: none;
   z-index: 3;
+  transition: opacity 0.25s;
 }
+.trail-outer.trail-scroll-end::after { opacity: 0; }
 
 /* The scrollable trail row */
 .trail-scroll {
