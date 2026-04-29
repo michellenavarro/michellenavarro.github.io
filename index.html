@@ -107,107 +107,142 @@
         <p>Six years of production engineering. Here's what I built.</p>
       </div>
 
-      <div class="projects">
+      <!-- TRAIL MAP TIMELINE -->
+      <div class="trail-map" id="trailMap">
 
-        <!-- SENIOR SWE -->
-        <div class="role-label">
-          <span class="role-co">Taboola</span>
-          <span class="role-title">Senior Software Engineer &mdash; 2021&ndash;2023</span>
+        <div class="trail-era-nav">
+          <button class="trail-era-btn" data-era="watsi">
+            <span class="era-dot"></span>Watsi &middot; 2016
+          </button>
+          <button class="trail-era-btn" data-era="fullstack">
+            <span class="era-dot"></span>Taboola Full Stack &middot; 2017&ndash;21
+          </button>
+          <button class="trail-era-btn" data-era="senior">
+            <span class="era-dot"></span>Taboola Senior &middot; 2021&ndash;23
+          </button>
         </div>
 
-        <div class="scroll-track">
-          <div class="project-grid">
-            <article class="project">
-              <div class="project-top">
-                <span class="ptag">Java &middot; Spring Boot &middot; React &middot; LLM</span>
+        <div class="trail-outer">
+          <div class="trail-scroll" id="trailScroll">
+
+            <!-- ── Watsi ── -->
+            <div class="trail-era-sep" id="trail-era-watsi" data-era="watsi">
+              <span class="tes-label">Watsi<br/>2016</span>
+            </div>
+            <div class="trail-stop" data-era="watsi">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Node.js &middot; Ruby on Rails &middot; React</div>
+                <h3 class="tc-title">Watsi Engineering Internship</h3>
+                <p class="tc-desc">Contributed features to Watsi&rsquo;s global patient funding platform, connecting donors with patients receiving life-changing medical care.</p>
               </div>
-              <h3>Generative AI Prompt Helper</h3>
-              <p>Built the Java Spring REST API backend and React frontend for Taboola's generative AI prompt helper, contributing to AI tools that drove up to 50% higher advertiser conversions. One of the company's highest-leverage products during my tenure.</p>
-            </article>
-            <article class="project">
-              <div class="project-top">
-                <span class="ptag">Airflow &middot; MySQL &middot; Vertica &middot; Tableau</span>
+            </div>
+
+            <!-- ── Taboola Full Stack ── -->
+            <div class="trail-era-sep" id="trail-era-fullstack" data-era="fullstack">
+              <span class="tes-label">Taboola<br/>Full Stack<br/>2017&ndash;21</span>
+            </div>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">OAuth 2.0 &middot; Node.js &middot; Chrome Extension</div>
+                <h3 class="tc-title">Auth Refactor &mdash; OAuth Refresh Tokens</h3>
+                <p class="tc-desc">Refactored authentication for Newsroom&rsquo;s Chrome extension to implement OAuth refresh token session management, eliminating daily logouts and increasing retention by 30%.</p>
               </div>
-              <h3>Analytics &amp; Behavior Tracking Pipelines</h3>
-              <p>Added analytics flows from frontend to MySQL and Vertica tables, powering Tableau and Google dashboards to surface real-time behavioral data across product surfaces.</p>
-            </article>
-            <article class="project">
-              <div class="project-top">
-                <span class="ptag">Airflow &middot; Java &middot; REST APIs</span>
+            </div>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Node.js &middot; Kubernetes &middot; ML</div>
+                <h3 class="tc-title">Automated Content Review Crawler</h3>
+                <p class="tc-desc">Designed and productized a Node.js web crawler on Kubernetes for content review, reducing ad approval time by 35%+ and enhancing downstream ML models.</p>
               </div>
-              <h3>End-to-End Notification Flow</h3>
-              <p>Implemented a full notification system using Airflow, improving the adoption rate of call-to-action and ad description campaign features by over 15% across international teams.</p>
-            </article>
-            <article class="project">
-              <div class="project-top">
-                <span class="ptag">Java &middot; A/B Testing &middot; Refactor</span>
+            </div>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Java &middot; Spring &middot; REST APIs &middot; React</div>
+                <h3 class="tc-title">Publisher Client Onboarding Dashboard</h3>
+                <p class="tc-desc">Built REST API endpoints and an internal dashboard for publisher onboarding, replacing a legacy flow and significantly reducing setup errors.</p>
               </div>
-              <h3>A/B Testing Infrastructure Refactor</h3>
-              <p>Reduced configuration complexity of A/B testing functionality by refactoring legacy infrastructure, leading to fewer system and user errors across the platform.</p>
-            </article>
-          </div>
-        </div>
-
-        <!-- FULL STACK -->
-        <div class="role-label role-label-spaced">
-          <span class="role-co">Taboola</span>
-          <span class="role-title">Full Stack Engineer &mdash; 2017&ndash;2021</span>
-        </div>
-
-        <div class="scroll-track">
-          <div class="project-grid">
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">Java &middot; Spring &middot; REST APIs &middot; React</span>
             </div>
-            <h3>Publisher Client Onboarding Dashboard</h3>
-            <p>Created Java Spring REST API endpoints and an internal dashboard to onboard and configure publisher clients, replacing a legacy flow and significantly reducing errors and setup time.</p>
-          </article>
-
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">Node.js &middot; Kubernetes &middot; ML</span>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">React &middot; Redux &middot; Java &middot; JUnit &middot; Jest</div>
+                <h3 class="tc-title">Taboola Ads Campaign Platform</h3>
+                <p class="tc-desc">Developed and maintained client-facing and server-side features for the Taboola Ads campaign platform with full automated test coverage.</p>
+              </div>
             </div>
-            <h3>Automated Content Review Crawler</h3>
-            <p>Designed, documented, and productized a Node.js web crawler deployed to Kubernetes for content review, reducing ad approval time by over 35% and enhancing downstream data science models.</p>
-          </article>
-
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">React &middot; Redux &middot; Java &middot; JUnit &middot; Jest</span>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Grafana &middot; PagerDuty &middot; Observability</div>
+                <h3 class="tc-title">Production Monitoring &amp; Alerting</h3>
+                <p class="tc-desc">Implemented production monitoring and alerting for critical endpoints using Grafana and PagerDuty, improving incident response and system reliability.</p>
+              </div>
             </div>
-            <h3>Taboola Ads Campaign Platform</h3>
-            <p>Developed and maintained client-facing and server-side features for the Taboola Ads campaign management platform with full automated test coverage using Java, JUnit, React, and Jest.</p>
-          </article>
-
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">Grafana &middot; PagerDuty &middot; Observability</span>
+            <div class="trail-stop" data-era="fullstack">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">React Native &middot; React Redux</div>
+                <h3 class="tc-title">Newsroom Mobile &amp; Web Apps</h3>
+                <p class="tc-desc">Contributed features to the Taboola Newsroom analytics web app for publishers and built corresponding mobile experiences using React Native.</p>
+              </div>
             </div>
-            <h3>Production Monitoring &amp; Alerting</h3>
-            <p>Implemented production monitoring and alerting for critical endpoints using Grafana and PagerDuty, improving incident response and system reliability.</p>
-          </article>
 
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">React Native &middot; React Redux</span>
+            <!-- ── Taboola Senior ── -->
+            <div class="trail-era-sep" id="trail-era-senior" data-era="senior">
+              <span class="tes-label">Taboola<br/>Senior SWE<br/>2021&ndash;23</span>
             </div>
-            <h3>Newsroom Mobile &amp; Web Apps</h3>
-            <p>Contributed features to Taboola Newsroom, a React Redux analytics web app for publishers, and built corresponding mobile features using React Native.</p>
-          </article>
-
-          <!-- INTERN -->
-          <article class="project">
-            <div class="project-top">
-              <span class="ptag">OAuth 2.0 &middot; Node.js &middot; Chrome Extension</span>
+            <div class="trail-stop" data-era="senior">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Java &middot; Spring Boot &middot; React &middot; LLM</div>
+                <h3 class="tc-title">Generative AI Prompt Helper</h3>
+                <p class="tc-desc">Built the Java Spring REST API and React frontend for Taboola&rsquo;s generative AI prompt helper, driving up to 50% higher advertiser conversions.</p>
+              </div>
             </div>
-            <h3>Auth Refactor &mdash; OAuth Refresh Tokens</h3>
-            <p>Refactored authentication for Newsroom's Chrome extension to implement OAuth refresh token session management, eliminating daily logouts and increasing user retention by 30%.</p>
-          </article>
-          </div>
-        </div>
+            <div class="trail-stop" data-era="senior">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Airflow &middot; MySQL &middot; Vertica &middot; Tableau</div>
+                <h3 class="tc-title">Analytics &amp; Behavior Tracking Pipelines</h3>
+                <p class="tc-desc">Added analytics flows from frontend to MySQL and Vertica tables, powering Tableau dashboards to surface real-time behavioral data.</p>
+              </div>
+            </div>
+            <div class="trail-stop" data-era="senior">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Airflow &middot; Java &middot; REST APIs</div>
+                <h3 class="tc-title">End-to-End Notification Flow</h3>
+                <p class="tc-desc">Implemented a full notification system using Airflow, improving adoption of campaign features by 15%+ across international teams.</p>
+              </div>
+            </div>
+            <div class="trail-stop" data-era="senior">
+              <div class="tsm-wrap"><div class="tsm"></div></div>
+              <div class="tsc"></div>
+              <div class="trail-card">
+                <div class="tc-tags">Java &middot; A/B Testing &middot; Refactor</div>
+                <h3 class="tc-title">A/B Testing Infrastructure Refactor</h3>
+                <p class="tc-desc">Reduced A/B testing configuration complexity by refactoring legacy infrastructure, leading to fewer system and user errors platform-wide.</p>
+              </div>
+            </div>
 
-      </div><!-- /projects -->
+            <div class="trail-end-pad"></div>
+          </div><!-- /trail-scroll -->
+        </div><!-- /trail-outer -->
+      </div><!-- /trail-map -->
 
       <!-- SKILLS -->
       <div class="skills-block">

@@ -59,7 +59,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 // ── Scroll reveal ─────────────────────────────────────────
 const revealEls = document.querySelectorAll(
-  '.project, .skill-group, .map-card, .outside-strip, ' +
+  '.trail-map, .skill-group, .map-card, .outside-strip, ' +
   '.about-right p, .btn-row, .contact-h, .contact-body, ' +
   '.contact-section .btn-large, .section-hd'
 );
@@ -118,11 +118,40 @@ document.querySelectorAll('.scroll-track').forEach(track => {
 });
 
 // Stagger grids
-document.querySelectorAll('.project-grid, .maps-scroll, .skills-block').forEach(grid => {
+document.querySelectorAll('.maps-scroll, .skills-block').forEach(grid => {
   [...grid.children].forEach((child, i) => {
     child.style.transitionDelay = `${i * 70}ms`;
   });
 });
+
+// ── Trail map era buttons ─────────────────────────────────
+const trailScroll = document.getElementById('trailScroll');
+const trailEraBtns = document.querySelectorAll('.trail-era-btn');
+const trailStops = document.querySelectorAll('.trail-stop');
+const trailSeps = document.querySelectorAll('.trail-era-sep');
+
+if (trailScroll) {
+  trailEraBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const era = btn.dataset.era;
+      const alreadyActive = btn.classList.contains('active');
+
+      trailEraBtns.forEach(b => b.classList.remove('active'));
+      trailStops.forEach(s => s.classList.remove('dimmed'));
+      trailSeps.forEach(s => s.classList.remove('dimmed'));
+
+      if (!alreadyActive) {
+        btn.classList.add('active');
+        trailStops.forEach(s => { if (s.dataset.era !== era) s.classList.add('dimmed'); });
+        trailSeps.forEach(s => { if (s.dataset.era !== era) s.classList.add('dimmed'); });
+        const anchor = document.getElementById(`trail-era-${era}`);
+        if (anchor) {
+          trailScroll.scrollTo({ left: anchor.offsetLeft - 24, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+}
 
 // ── Active nav ────────────────────────────────────────────
 const sections = document.querySelectorAll('section[id]');

@@ -629,6 +629,219 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 }
 .project-small { opacity: 0.88; }
 
+/* ── TRAIL MAP ────────────────────────────────────────────── */
+.trail-map { margin-bottom: 5rem; }
+
+.trail-era-nav {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.trail-era-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  border: 1px solid var(--border-mid);
+  background: var(--paper);
+  font-family: var(--f-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.trail-era-btn:hover { background: var(--paper-warm); }
+
+.era-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.trail-era-btn[data-era="senior"]    .era-dot { background: var(--kelp); }
+.trail-era-btn[data-era="fullstack"] .era-dot { background: var(--ocean); }
+.trail-era-btn[data-era="watsi"]     .era-dot { background: var(--ochre); }
+
+.trail-era-btn.active[data-era="senior"]    { background: var(--kelp-light);  border-color: var(--kelp);  color: var(--kelp); }
+.trail-era-btn.active[data-era="fullstack"] { background: #dceaf5; border-color: var(--ocean); color: var(--ocean); }
+.trail-era-btn.active[data-era="watsi"]     { background: var(--ochre-pale); border-color: var(--ochre); color: var(--ochre); }
+
+/* Outer container clips the scroll + adds right fade */
+.trail-outer {
+  position: relative;
+  overflow: hidden;
+}
+.trail-outer::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 80px;
+  background: linear-gradient(to right, transparent, var(--paper-warm));
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* The scrollable trail row */
+.trail-scroll {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: 440px;
+  padding-left: 1.5rem;
+  padding-right: 3rem;
+  /* Dashed trail line: center at y = 98 + 10 = 108px */
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(28,27,22,0.16) 0px,
+    rgba(28,27,22,0.16) 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 108px;
+}
+.trail-scroll::-webkit-scrollbar { display: none; }
+
+/* Era separator — thin vertical line with label */
+.trail-era-sep {
+  flex-shrink: 0;
+  width: 1px;
+  align-self: stretch;
+  background: rgba(28,27,22,0.12);
+  position: relative;
+  margin: 0 28px;
+  transition: opacity 0.3s ease;
+}
+.trail-era-sep[data-era="senior"]    { background: rgba(30,92,56,0.4); }
+.trail-era-sep[data-era="fullstack"] { background: rgba(30,63,92,0.4); }
+.trail-era-sep[data-era="watsi"]     { background: rgba(184,125,42,0.4); }
+.trail-era-sep.dimmed { opacity: 0.15; }
+
+.tes-label {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  font-family: var(--f-mono);
+  font-size: 0.57rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.55;
+  white-space: nowrap;
+  color: var(--ink-soft);
+}
+.trail-era-sep[data-era="senior"]    .tes-label { color: var(--kelp); }
+.trail-era-sep[data-era="fullstack"] .tes-label { color: var(--ocean); }
+.trail-era-sep[data-era="watsi"]     .tes-label { color: var(--ochre); }
+
+/* Trail stop */
+.trail-stop {
+  flex-shrink: 0;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+  padding-top: 98px; /* marker center = 98 + 10 = 108px = trail line */
+  transition: opacity 0.3s ease;
+}
+.trail-stop.dimmed { opacity: 0.18; }
+
+/* Era color tokens */
+.trail-stop[data-era="senior"]    { --era-c: var(--kelp);  --era-t: var(--kelp-light); }
+.trail-stop[data-era="fullstack"] { --era-c: var(--ocean); --era-t: #dceaf5; }
+.trail-stop[data-era="watsi"]     { --era-c: var(--ochre); --era-t: var(--ochre-pale); }
+
+/* Marker: filled circle + outer ring */
+.tsm-wrap {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.tsm {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--era-c, var(--ink-mid));
+  position: relative;
+}
+.tsm::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--era-c, var(--ink-mid));
+  background: var(--era-t, transparent);
+  opacity: 0.5;
+}
+
+/* Vertical connector from marker to card */
+.tsc {
+  width: 2px;
+  height: 36px;
+  background: var(--era-c, var(--ink-mid));
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+
+/* Project card */
+.trail-card {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--era-c, var(--border-mid));
+  border-radius: 0 0 var(--r) var(--r);
+  background: var(--paper);
+  padding: 0.9rem 1rem 1rem;
+  flex: 1;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.trail-stop:not(.dimmed):hover .trail-card {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 22px rgba(28,27,22,0.09);
+}
+
+.tc-tags {
+  font-family: var(--f-mono);
+  font-size: 0.57rem;
+  letter-spacing: 0.06em;
+  color: var(--era-c, var(--ink-soft));
+  margin-bottom: 0.55rem;
+  line-height: 1.55;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--era-c, var(--border-mid));
+  opacity: 0.9;
+}
+.tc-title {
+  font-family: var(--f-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}
+.tc-desc {
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.trail-end-pad { flex-shrink: 0; width: 60px; }
+
 
 /* ── MAPS + OUTSIDE MERGED ────────────────────────────────── */
 .maps-section {
