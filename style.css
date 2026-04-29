@@ -532,23 +532,6 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   padding: 0.28rem 0;
   border-bottom: 1px solid rgba(28,27,22,0.05);
 }
-.skill-group-climate {
-  background: var(--kelp-light);
-  padding: 1.25rem;
-  border-radius: var(--r);
-  border: 1px solid rgba(30,92,56,0.15);
-}
-.skill-group-climate h4 { color: var(--kelp); border-color: rgba(30,92,56,0.2); }
-.skill-group-climate h4 em {
-  font-style: italic;
-  font-family: var(--f-body);
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.75rem;
-  color: var(--kelp-mid);
-  display: block;
-  margin-top: 2px;
-}
 
 /* maps styles now in merged section above */
 
