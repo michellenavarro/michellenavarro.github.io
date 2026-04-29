@@ -122,12 +122,12 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   justify-content: center;
   padding: 9rem 2.5rem 5rem;
-  background: var(--paper);
+  background: url('images/rocks.jpg') center/cover no-repeat;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle topographic grid lines in background */
+/* Paper overlay + topographic grid lines over the background image */
 .hero::before {
   content: '';
   position: absolute;
@@ -137,16 +137,17 @@ img { display: block; max-width: 100%; }
       0deg,
       transparent,
       transparent 59px,
-      rgba(30,92,56,0.055) 59px,
-      rgba(30,92,56,0.055) 60px
+      rgba(30,92,56,0.06) 59px,
+      rgba(30,92,56,0.06) 60px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 59px,
-      rgba(30,92,56,0.055) 59px,
-      rgba(30,92,56,0.055) 60px
-    );
+      rgba(30,92,56,0.06) 59px,
+      rgba(30,92,56,0.06) 60px
+    ),
+    linear-gradient(rgba(246,243,236,0.84), rgba(246,243,236,0.84));
   pointer-events: none;
 }
 
@@ -368,12 +369,19 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 .project-hero .pco   { color: rgba(255,255,255,0.4); }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   gap: 1.25rem;
+  padding-bottom: 0.5rem;
 }
+.project-grid::-webkit-scrollbar { display: none; }
 
 .project {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
   background: var(--paper);
   border: 1px solid var(--border);
   border-radius: var(--r);
@@ -431,7 +439,9 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   gap: 2rem;
   border-top: 1px solid var(--border);
   padding-top: 3.5rem;
+  margin-top: 4rem;
 }
+.skill-group { padding: 0.25rem; }
 .skill-group h4 {
   font-family: var(--f-mono);
   font-size: 0.68rem;
@@ -552,73 +562,25 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 }
 .project-small { opacity: 0.88; }
 
-/* ── SKILLS SCROLL STRIP ──────────────────────────────────── */
-.skills-block {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  margin-top: 4rem;
-  scrollbar-width: none;
-}
-.skills-block::-webkit-scrollbar { display: none; }
-.skill-group {
-  flex: 0 0 220px;
-  scroll-snap-align: start;
-  padding: 1.75rem 1.5rem;
-  border-right: 1px solid var(--border);
-}
-.skill-group:last-child { border-right: none; }
-.skill-group h4 {
-  font-family: var(--f-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--kelp);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-.skill-group ul { list-style: none; }
-.skill-group li {
-  font-size: 0.875rem;
-  color: var(--ink-mid);
-  font-weight: 300;
-  padding: 0.28rem 0;
-  border-bottom: 1px solid rgba(28,27,22,0.05);
-  white-space: nowrap;
-}
-.skill-group-climate {
-  background: var(--kelp-light);
-  flex: 0 0 240px;
-}
-.skill-group-climate h4 { border-color: rgba(30,92,56,0.2); }
-.skill-group-climate h4 em {
-  font-style: italic;
-  font-family: var(--f-body);
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.72rem;
-  color: var(--kelp-mid);
-  display: block;
-  margin-top: 2px;
-  white-space: normal;
-}
-.skills-scroll-hint {
-  font-family: var(--f-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  text-align: right;
-  margin-top: 0.5rem;
-}
 
 /* ── MAPS + OUTSIDE MERGED ────────────────────────────────── */
-.maps-section { background: var(--paper-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.maps-section {
+  background: url('images/swiss.jpg') center/cover no-repeat fixed;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.maps-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(237,232,221,0.88);
+  pointer-events: none;
+}
+.maps-section .container {
+  position: relative;
+  z-index: 1;
+}
 
 .maps-grid {
   display: grid;
@@ -778,8 +740,8 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 }
 
 .modal-close {
-  position: absolute;
-  top: -1rem; right: -1rem;
+  position: fixed;
+  top: 1.25rem; right: 1.25rem;
   width: 2.25rem; height: 2.25rem;
   background: var(--paper);
   border: none;
@@ -790,7 +752,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   display: flex; align-items: center; justify-content: center;
   line-height: 1;
   transition: background 0.2s;
-  z-index: 10;
+  z-index: 600;
 }
 .modal-close:hover { background: var(--paper-dark); }
 
@@ -830,14 +792,13 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   .hero-coords { min-width: 0; width: 100%; max-width: 280px; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-left { position: static; }
-  .project-grid { grid-template-columns: 1fr; }
   .maps-grid { grid-template-columns: 1fr; }
   .map-card-lg .map-img { height: 260px; }
   .map-col .map-card .map-img { height: 220px; }
   .outside-strip { grid-template-columns: 1fr; }
   .outside-strip-img { height: 260px; }
   .outside-strip-text { border-left: none; border-top: 1px solid var(--border); }
-  .modal-close { top: 0.5rem; right: 0.5rem; }
+
 }
 
 @media (max-width: 640px) {
