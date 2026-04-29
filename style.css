@@ -210,7 +210,7 @@ h1 {
   color: var(--ink-mid);
   line-height: 1.8;
   margin-bottom: 2rem;
-  max-width: 420px;
+  max-width: 560px;
 }
 
 .htag-old-remove { display: none; } /* chips replaced by hero-tags */
@@ -244,17 +244,6 @@ h1 {
 .coord-active { color: var(--kelp); }
 .coord-hr { border: none; border-top: 1px solid var(--border); margin: 0.25rem 0; }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem; left: 2.5rem;
-  font-family: var(--f-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  z-index: 1;
-  animation: nudge 2.5s ease-in-out infinite;
-}
-@keyframes nudge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
 /* ── SHARED ───────────────────────────────────────────────── */
 .container {
@@ -345,6 +334,41 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 }
 .about-right strong { color: var(--kelp); font-weight: 500; font-style: normal; }
 
+.edu-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.edu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.edu-deg {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  font-weight: 500;
+}
+.edu-deg em {
+  font-style: italic;
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  color: var(--kelp-mid);
+  letter-spacing: 0;
+  font-weight: 300;
+}
+.edu-school {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-mid);
+}
+
 /* ── SOFTWARE ─────────────────────────────────────────────── */
 .software-section {
   background: var(--paper-warm);
@@ -421,13 +445,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   border-left: 2px solid var(--kelp);
   line-height: 1.4;
 }
-.pco {
-  font-family: var(--f-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--kelp-mid);
-}
+.pco { display: none; }
 .project h3 {
   font-family: var(--f-serif);
   font-size: 1.1rem;
@@ -536,18 +554,29 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem; left: 2.5rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--f-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-mid);
   z-index: 1;
   text-decoration: none;
   animation: nudge 2.5s ease-in-out infinite;
-  transition: color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
+  border: 1px solid var(--border-mid);
+  padding: 0.45rem 0.9rem;
+  border-radius: 2rem;
+  background: rgba(246,243,236,0.7);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
 }
-.hero-scroll:hover { color: var(--kelp); }
-@keyframes nudge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+.hero-scroll:hover { color: var(--kelp); border-color: var(--kelp); }
+@keyframes nudge {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%     { transform: translateX(-50%) translateY(5px); }
+}
 
 /* ── ROLE LABELS ──────────────────────────────────────────── */
 .role-label {
