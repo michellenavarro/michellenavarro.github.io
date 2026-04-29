@@ -23,6 +23,8 @@
   --ocean:       #1e3f5c;     /* deep blue from the kelp map ocean */
   --ochre:       #b87d2a;     /* from the fault map warm tones */
   --ochre-pale:  #f5ead6;
+  --teal:        #4a6e7c;     /* muted teal for intern era */
+  --teal-light:  #e0ecf0;
 
   --border:      rgba(28,27,22,0.10);
   --border-mid:  rgba(28,27,22,0.18);
@@ -665,10 +667,12 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 .trail-era-btn[data-era="senior"]    .era-dot { background: var(--kelp); }
 .trail-era-btn[data-era="fullstack"] .era-dot { background: var(--ocean); }
 .trail-era-btn[data-era="watsi"]     .era-dot { background: var(--ochre); }
+.trail-era-btn[data-era="intern"]    .era-dot { background: var(--teal); }
 
 .trail-era-btn.active[data-era="senior"]    { background: var(--kelp-light);  border-color: var(--kelp);  color: var(--kelp); }
 .trail-era-btn.active[data-era="fullstack"] { background: #dceaf5; border-color: var(--ocean); color: var(--ocean); }
 .trail-era-btn.active[data-era="watsi"]     { background: var(--ochre-pale); border-color: var(--ochre); color: var(--ochre); }
+.trail-era-btn.active[data-era="intern"]    { background: var(--teal-light); border-color: var(--teal); color: var(--teal); }
 
 /* Outer container clips the scroll + adds right fade */
 .trail-outer {
@@ -721,6 +725,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 .trail-era-sep[data-era="senior"]    { background: rgba(30,92,56,0.4); }
 .trail-era-sep[data-era="fullstack"] { background: rgba(30,63,92,0.4); }
 .trail-era-sep[data-era="watsi"]     { background: rgba(184,125,42,0.4); }
+.trail-era-sep[data-era="intern"]    { background: rgba(74,110,124,0.4); }
 .trail-era-sep.dimmed { opacity: 0.15; }
 
 .tes-label {
@@ -738,6 +743,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 .trail-era-sep[data-era="senior"]    .tes-label { color: var(--kelp); }
 .trail-era-sep[data-era="fullstack"] .tes-label { color: var(--ocean); }
 .trail-era-sep[data-era="watsi"]     .tes-label { color: var(--ochre); }
+.trail-era-sep[data-era="intern"]    .tes-label { color: var(--teal); }
 
 /* Trail stop */
 .trail-stop {
@@ -756,6 +762,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 .trail-stop[data-era="senior"]    { --era-c: var(--kelp);  --era-t: var(--kelp-light); }
 .trail-stop[data-era="fullstack"] { --era-c: var(--ocean); --era-t: #dceaf5; }
 .trail-stop[data-era="watsi"]     { --era-c: var(--ochre); --era-t: var(--ochre-pale); }
+.trail-stop[data-era="intern"]    { --era-c: var(--teal);  --era-t: var(--teal-light); }
 
 /* Marker: filled circle + outer ring */
 .tsm-wrap {
@@ -767,7 +774,13 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   flex-shrink: 0;
   position: relative;
   z-index: 2;
+  cursor: pointer;
 }
+.tsm-wrap:hover .tsm {
+  transform: scale(1.2);
+  transition: transform 0.15s ease;
+}
+.tsm { transition: transform 0.15s ease; }
 .tsm {
   width: 12px;
   height: 12px;

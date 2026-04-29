@@ -131,6 +131,16 @@ const trailStops = document.querySelectorAll('.trail-stop');
 const trailSeps = document.querySelectorAll('.trail-era-sep');
 
 if (trailScroll) {
+  // Click a marker to center that stop in the trail viewport
+  trailStops.forEach(stop => {
+    const marker = stop.querySelector('.tsm-wrap');
+    if (!marker) return;
+    marker.addEventListener('click', () => {
+      const center = stop.offsetLeft + stop.offsetWidth / 2;
+      trailScroll.scrollTo({ left: center - trailScroll.clientWidth / 2, behavior: 'smooth' });
+    });
+  });
+
   trailEraBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const era = btn.dataset.era;
