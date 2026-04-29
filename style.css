@@ -632,7 +632,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 
 /* ── MAPS + OUTSIDE MERGED ────────────────────────────────── */
 .maps-section {
-  background: url('images/matterhorn.jpg') center/cover no-repeat fixed;
+  background: url('images/matterhorn.JPG') center/cover no-repeat fixed;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   position: relative;
