@@ -82,8 +82,19 @@ const revealObs = new IntersectionObserver(entries => {
 
 revealEls.forEach(el => revealObs.observe(el));
 
+// Scroll-end fade detection
+document.querySelectorAll('.project-grid, .maps-scroll').forEach(el => {
+  const track = el.closest('.scroll-track');
+  if (!track) return;
+  const check = () => {
+    track.classList.toggle('scroll-end', el.scrollLeft + el.clientWidth >= el.scrollWidth - 8);
+  };
+  check();
+  el.addEventListener('scroll', check, { passive: true });
+});
+
 // Stagger grids
-document.querySelectorAll('.project-grid, .maps-grid .map-col, .skills-block').forEach(grid => {
+document.querySelectorAll('.project-grid, .maps-scroll, .skills-block').forEach(grid => {
   [...grid.children].forEach((child, i) => {
     child.style.transitionDelay = `${i * 70}ms`;
   });
