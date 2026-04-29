@@ -1,9 +1,0 @@
-title: "Michelle Navarro"
-description: "Software Engineer"
-baseurl: "" # leave empty unless hosting in subfolder
-url: ""     # set later when deployed
-
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
