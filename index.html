@@ -40,12 +40,12 @@
           I'm learning to read the land through maps.<br/>
           I want my work to help the planet.
         </p>
-        <div class="hero-chips">
-          <span class="chip chip-green">Climate tech</span>
-          <span class="chip">Java &middot; Spring Boot</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">GIS <em>in progress</em></span>
-        </div>
+        <ul class="hero-tags">
+          <li class="htag htag-green">Climate tech</li>
+          <li class="htag">Java &middot; Spring Boot</li>
+          <li class="htag">REST APIs</li>
+          <li class="htag">GIS <em>in progress</em></li>
+        </ul>
       </div>
       <div class="hero-coords">
         <div class="coord-row">
@@ -75,23 +75,33 @@
     <div class="container about-grid">
       <div class="about-left">
         <span class="eyebrow">01 &mdash; About</span>
-        <h2>Engineer.<br/><em>(and Cartographer-<br/>in-training.)</em></h2>
+        <h2>Engineer.<br/>Cartographer-<br/>in-training.<br/><em>Angeleno.</em></h2>
       </div>
       <div class="about-right">
         <p class="lead">
-          I’m a software engineer with 6+ years of experience building production backend systems, 
-          including event-driven data pipelines and client-facing REST APIs at scale. 
-          My core stack is Java and Spring Boot, with additional experience in Node.js, 
-          React, and data infrastructure (Airflow, MySQL, Vertica).
+          I'm a full-stack engineer with 6+ years shipping production systems &mdash;
+          event-driven data pipelines, client-facing REST APIs, LLM-powered products,
+          and the observability infrastructure that keeps them honest. My core stack is
+          Java and Spring Boot, with React and Node on the frontend side.
         </p>
         <p>
-          Most recently at Taboola, I worked on backend systems supporting large-scale advertising products, 
-          focusing on reliability, data flow, and API design across distributed services.
+          In late 2023 I made a deliberate decision to step back from engineering and figure
+          out what I actually wanted my work to be about. I'd spent years building ad tech at
+          scale and I was good at it &mdash; but I wanted my skills to matter differently.
         </p>
         <p>
-          I’m currently focused on climate and environmental data systems, including GIS and spatial analysis, 
-          and I’m interested in backend engineering roles in climate tech and clean energy 
-          where data infrastructure connects directly to real-world impact.
+          That time led me somewhere unexpected. I reconnected with the physical world &mdash;
+          land, water, weather, the geography underneath the data. I started a
+          <strong>GIS certificate at Pasadena City College</strong> and enrolled in environmental
+          data science coursework through the University of Edinburgh.
+          Not as a resume move. Because maps are one of the most powerful ways we make
+          sense of a world that's changing fast, and I want to be part of that.
+        </p>
+        <p>
+          I'm based in Los Angeles. I run (finished my first marathon in 2025).
+          I hike whenever I can escape the city. I'm focused on roles in
+          <strong>climate tech and clean energy</strong> where what I know how to build
+          meets work that actually matters.
         </p>
         <div class="btn-row">
           <a href="MichelleNavarroResume.pdf" class="btn" target="_blank">Resume &nearr;</a>
@@ -107,56 +117,145 @@
       <div class="section-hd">
         <span class="eyebrow">02 &mdash; Software</span>
         <h2>Work &amp; Skills</h2>
-        <p class="section-intro">Six years as a Software Engineer at Taboola. Here's what I built and what I've worked with.</p>
+        <p class="section-intro">Six years of production engineering at Taboola, plus internships at Watsi and Barnard IT. Here's what I built.</p>
       </div>
 
       <div class="projects">
+
+        <!-- SENIOR SWE -->
+        <div class="role-label">
+          <span class="role-co">Taboola</span>
+          <span class="role-title">Senior Software Engineer &mdash; 2021&ndash;2023</span>
+        </div>
+
         <article class="project project-hero">
           <div class="project-top">
             <span class="ptag">Java &middot; Spring Boot &middot; React &middot; LLM</span>
-            <span class="pco">Taboola &mdash; 2021&ndash;23</span>
+            <span class="pco">Senior SWE</span>
           </div>
-          <h3>Generative AI Prompt Optimization</h3>
-          <p>Built the React frontend and Java Spring Boot backend for Taboola's generative AI prompt helper end to end. The tool became instrumental in routing over 50% of ad spend through Taboola's AI pipeline &mdash; one of the company's highest-leverage products while I was there.</p>
+          <h3>Generative AI Prompt Helper</h3>
+          <p>Built the Java Spring REST API backend and React frontend for Taboola's generative AI prompt helper, contributing to AI tools that drove up to 50% higher advertiser conversions. One of the company's highest-leverage products during my tenure.</p>
         </article>
 
         <div class="project-grid">
           <article class="project">
             <div class="project-top">
               <span class="ptag">Airflow &middot; MySQL &middot; Vertica &middot; Tableau</span>
-              <span class="pco">Taboola</span>
+              <span class="pco">Senior SWE</span>
             </div>
-            <h3>Event-Driven Analytics Pipelines</h3>
-            <p>Architected Airflow-orchestrated pipelines connecting frontend instrumentation to MySQL and Vertica, surfacing real-time behavioral data across Tableau and Google Analytics dashboards.</p>
+            <h3>Analytics &amp; Behavior Tracking Pipelines</h3>
+            <p>Added analytics flows from frontend to MySQL and Vertica tables, powering Tableau and Google dashboards to surface real-time behavioral data across product surfaces.</p>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <span class="ptag">OAuth 2.0 &middot; Node.js</span>
-              <span class="pco">Taboola</span>
+              <span class="ptag">Airflow &middot; Java &middot; REST APIs</span>
+              <span class="pco">Senior SWE</span>
             </div>
-            <h3>Auth Refactor &mdash; Refresh Tokens</h3>
-            <p>Refactored the Newsroom Chrome extension auth layer to support OAuth refresh tokens, eliminating daily session timeouts. Improved user retention by 30%.</p>
+            <h3>End-to-End Notification Flow</h3>
+            <p>Implemented a full notification system using Airflow, improving the adoption rate of call-to-action and ad description campaign features by over 15% across international teams.</p>
           </article>
 
           <article class="project">
             <div class="project-top">
-              <span class="ptag">Node.js &middot; ML &middot; Automation</span>
-              <span class="pco">Taboola</span>
+              <span class="ptag">Java &middot; A/B Testing &middot; Refactor</span>
+              <span class="pco">Senior SWE</span>
             </div>
-            <h3>Automated Content Review Crawler</h3>
-            <p>Built and productized a Node.js web scraper for content review, cutting ad approval time by 35% and producing cleaner training data for downstream ML models.</p>
+            <h3>A/B Testing Infrastructure Refactor</h3>
+            <p>Reduced configuration complexity of A/B testing functionality by refactoring legacy infrastructure, leading to fewer system and user errors across the platform.</p>
           </article>
         </div>
-      </div>
 
+        <!-- FULL STACK -->
+        <div class="role-label role-label-spaced">
+          <span class="role-co">Taboola</span>
+          <span class="role-title">Full Stack Engineer &mdash; 2018&ndash;2021</span>
+        </div>
+
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Java &middot; Spring &middot; REST APIs &middot; React</span>
+              <span class="pco">Full Stack</span>
+            </div>
+            <h3>Publisher Client Onboarding Dashboard</h3>
+            <p>Created Java Spring REST API endpoints and an internal dashboard to onboard and configure publisher clients, replacing a legacy flow and significantly reducing errors and setup time.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Node.js &middot; Kubernetes &middot; ML</span>
+              <span class="pco">Full Stack</span>
+            </div>
+            <h3>Automated Content Review Crawler</h3>
+            <p>Designed, documented, and productized a Node.js web crawler deployed to Kubernetes for content review, reducing ad approval time by over 35% and enhancing downstream data science models.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">React &middot; Redux &middot; Java &middot; JUnit &middot; Jest</span>
+              <span class="pco">Full Stack</span>
+            </div>
+            <h3>Taboola Ads Campaign Platform</h3>
+            <p>Developed and maintained client-facing and server-side features for the Taboola Ads campaign management platform with full automated test coverage using Java, JUnit, React, and Jest.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">Grafana &middot; PagerDuty &middot; Observability</span>
+              <span class="pco">Full Stack</span>
+            </div>
+            <h3>Production Monitoring &amp; Alerting</h3>
+            <p>Implemented production monitoring and alerting for critical endpoints using Grafana and PagerDuty, improving incident response and system reliability.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">React Native &middot; React Redux</span>
+              <span class="pco">Full Stack</span>
+            </div>
+            <h3>Newsroom Mobile &amp; Web Apps</h3>
+            <p>Contributed features to Taboola Newsroom, a React Redux analytics web app for publishers, and built corresponding mobile features using React Native.</p>
+          </article>
+
+          <!-- INTERN -->
+          <article class="project">
+            <div class="project-top">
+              <span class="ptag">OAuth 2.0 &middot; Node.js &middot; Chrome Extension</span>
+              <span class="pco">Intern &mdash; 2017&ndash;18</span>
+            </div>
+            <h3>Auth Refactor &mdash; OAuth Refresh Tokens</h3>
+            <p>Refactored authentication for Newsroom's Chrome extension to implement OAuth refresh token session management, eliminating daily logouts and increasing user retention by 30%.</p>
+          </article>
+        </div>
+
+        <!-- WATSI -->
+        <div class="role-label role-label-spaced">
+          <span class="role-co">Watsi</span>
+          <span class="role-title">Full Stack Engineering Intern &mdash; 2016</span>
+        </div>
+        <div class="project-grid">
+          <article class="project project-small">
+            <div class="project-top">
+              <span class="ptag">Ruby on Rails &middot; REST APIs &middot; PostgreSQL</span>
+              <span class="pco">Watsi &mdash; YC nonprofit</span>
+            </div>
+            <h3>External Rails API</h3>
+            <p>Built an external Rails API and modified database schemas with Active Record migrations for a Y Combinator-backed nonprofit healthcare crowdfunding platform.</p>
+          </article>
+        </div>
+
+      </div><!-- /projects -->
+
+      <!-- SKILLS -->
       <div class="skills-block">
         <div class="skill-group">
           <h4>Backend &amp; APIs</h4>
           <ul>
             <li>Java &middot; Spring Boot</li>
-            <li>Node.js &middot; Ruby on Rails</li>
-            <li>RESTful API design</li>
+            <li>REST API design</li>
+            <li>Node.js</li>
+            <li>Ruby on Rails</li>
             <li>OAuth 2.0 &middot; Auth flows</li>
             <li>JUnit &middot; Jest</li>
           </ul>
@@ -175,7 +274,8 @@
           <ul>
             <li>Airflow</li>
             <li>MySQL &middot; Vertica</li>
-            <li>PostgreSQL</li>
+            <li>Maven</li>
+            <li>Kubernetes</li>
             <li>Tableau &middot; Google Analytics</li>
           </ul>
         </div>
@@ -183,7 +283,6 @@
           <h4>Observability</h4>
           <ul>
             <li>Grafana &middot; PagerDuty</li>
-            <li>Sensu &middot; Puppet</li>
             <li>Monitoring &amp; alerting</li>
           </ul>
         </div>
@@ -259,13 +358,22 @@
   <!-- OUTSIDE -->
   <section id="outside" class="outside-section">
     <div class="outside-wrap">
-      <img class="outside-img" src="images/swiss.jpg" alt="Michelle hiking in the Swiss Alps, 2023" />
+      <img class="outside-img" src="images/hiking.jpg" alt="Michelle hiking in the Swiss Alps, 2023" />
       <div class="outside-overlay">
         <div class="outside-card">
           <span class="eyebrow eyebrow-light">04 &mdash; Outside</span>
-          <h2>Outside<br/>
+          <h2>Outside<br/>the terminal</h2>
           <p>
-            Outside of engineering work, I’m interested in maps and geospatial data, atmospheric science, and trail running.
+            I grew up in LA so I came to mountains late &mdash; but I made up for lost time.
+            That trip to Switzerland in 2023 was when I started taking the outdoors seriously.
+            A year and a half later I ran my first marathon. Most weekends you'll find me
+            somewhere in the San Gabriels or out toward Malibu.
+          </p>
+          <p>
+            There's something about terrain that requires you to understand it &mdash;
+            where water runs, where the ridge breaks, how elevation changes the whole character
+            of a place. I think that's part of why GIS clicked for me.
+            Maps are just a way of paying attention.
           </p>
           <p class="outside-loc">Bernese Oberland, Switzerland &mdash; 2023</p>
         </div>
@@ -278,12 +386,13 @@
     <div class="container">
       <div class="contact-inner">
         <span class="eyebrow">05 &mdash; Contact</span>
-          <h2 class="contact-h">
-            Building toward climate solutions
-          </h2>
-          <p class="contact-body">
-            I’m looking for roles in climate tech, clean energy, and environmental data. I care about climate change and want my work to contribute to addressing it in a tangible way.
-          </p>
+        <h2 class="contact-h">
+          Let's build something<br/><em>that matters.</em>
+        </h2>
+        <p class="contact-body">
+          I'm looking for roles in climate tech, clean energy, and environmental data &mdash;
+          especially where backend systems, APIs, and pipelines are core to the work.
+          If you're building infrastructure for a cleaner grid, I'd love to talk.
         </p>
         <a href="mailto:michellenavarro83@gmail.com" class="btn btn-large">
           michellenavarro83@gmail.com &rarr;
