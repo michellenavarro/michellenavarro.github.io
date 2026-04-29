@@ -40,12 +40,15 @@
           I'm learning to read the land through maps.<br/>
           I want my work to help the planet.
         </p>
-        <ul class="hero-tags">
-          <li class="htag htag-green">Climate tech</li>
-          <li class="htag">Java &middot; Spring Boot</li>
-          <li class="htag">REST APIs</li>
-          <li class="htag">GIS <em>in progress</em></li>
-        </ul>
+        <p class="hero-tags">
+          <span class="htag htag-green">Climate tech</span>
+          <span class="htag-sep">/</span>
+          <span class="htag">Java &middot; Spring Boot</span>
+          <span class="htag-sep">/</span>
+          <span class="htag">REST APIs</span>
+          <span class="htag-sep">/</span>
+          <span class="htag">GIS <em>in progress</em></span>
+        </p>
       </div>
       <div class="hero-coords">
         <div class="coord-row">
@@ -67,7 +70,7 @@
         </div>
       </div>
     </div>
-    <p class="hero-scroll">scroll &darr;</p>
+    <a href="#about" class="hero-scroll">scroll &darr;</a>
   </header>
 
   <!-- ABOUT -->
@@ -75,33 +78,24 @@
     <div class="container about-grid">
       <div class="about-left">
         <span class="eyebrow">01 &mdash; About</span>
-        <h2>Engineer.<br/>Cartographer-<br/>in-training.<br/><em>Angeleno.</em></h2>
+        <h2>Engineer.<br/><em>Cartographer-<br/>in-training.</em></h2>
       </div>
       <div class="about-right">
         <p class="lead">
-          I'm a full-stack engineer with 6+ years shipping production systems &mdash;
-          event-driven data pipelines, client-facing REST APIs, LLM-powered products,
-          and the observability infrastructure that keeps them honest. My core stack is
-          Java and Spring Boot, with React and Node on the frontend side.
+          Full-stack engineer with 6+ years in production — Java and Spring Boot on the backend,
+          React and Node on the frontend, Airflow and MySQL in the middle.
+          Mostly built ad tech. Ready to build something better.
         </p>
         <p>
-          In late 2023 I made a deliberate decision to step back from engineering and figure
-          out what I actually wanted my work to be about. I'd spent years building ad tech at
-          scale and I was good at it &mdash; but I wanted my skills to matter differently.
+          In 2023 I stepped back to figure out what I actually wanted to work on.
+          I landed on climate and clean energy — not as a pivot, more like a correction.
+          I started a <strong>GIS certificate at Pasadena City College</strong> and discovered
+          that spatial data is its own whole world.
         </p>
         <p>
-          That time led me somewhere unexpected. I reconnected with the physical world &mdash;
-          land, water, weather, the geography underneath the data. I started a
-          <strong>GIS certificate at Pasadena City College</strong> and enrolled in environmental
-          data science coursework through the University of Edinburgh.
-          Not as a resume move. Because maps are one of the most powerful ways we make
-          sense of a world that's changing fast, and I want to be part of that.
-        </p>
-        <p>
-          I'm based in Los Angeles. I run (finished my first marathon in 2025).
-          I hike whenever I can escape the city. I'm focused on roles in
-          <strong>climate tech and clean energy</strong> where what I know how to build
-          meets work that actually matters.
+          I'm based in LA. I run — finished my first marathon in 2025.
+          Most weekends I'm somewhere in the San Gabriels or out near Malibu,
+          which is probably why maps started making so much sense to me.
         </p>
         <div class="btn-row">
           <a href="MichelleNavarroResume.pdf" class="btn" target="_blank">Resume &nearr;</a>
@@ -300,99 +294,100 @@
     </div>
   </section>
 
-  <!-- MAPS -->
+  <!-- MAPS + OUTSIDE (merged) -->
   <section id="maps" class="section maps-section">
     <div class="container">
       <div class="section-hd">
-        <span class="eyebrow">03 &mdash; Maps</span>
+        <span class="eyebrow">03 &mdash; Maps &amp; Outside</span>
         <h2>Spatial Work</h2>
-        <p class="section-intro">GIS coursework from my certificate program at Pasadena City College. Each map is a real question I wanted to answer about a place I care about.</p>
+        <p class="section-intro">I got into GIS because I kept spending time outside and wanting to understand the land better. These maps are from my certificate program at PCC — click any to expand.</p>
       </div>
 
-      <figure class="map-featured">
-        <div class="map-img">
-          <img src="images/kelp-map.jpg" alt="Southern California Giant Kelp Forests Under Heat Stress, March 2026" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="map-n">01</span>
-          <div>
-            <h3>Southern California Kelp Forests Under Heat Stress</h3>
-            <p>Mapped giant kelp occurrences against NOAA sea surface temperature data to identify stress zones along the Southern California coast. The red crisis boundary marks where the next generation of kelp is at risk &mdash; areas where temperatures suppress juvenile growth before die-off levels are even reached.</p>
-            <p class="map-src">Data: NOAA &middot; GBIF &middot; Natural Earth &middot; ESRI</p>
-          </div>
-        </figcaption>
-      </figure>
-
-      <div class="map-pair">
-        <figure class="map-item">
+      <div class="maps-grid">
+        <figure class="map-card map-card-lg" data-modal="0">
           <div class="map-img">
-            <img src="images/fault-map.jpg" alt="Fault Lines and Population Density, Los Angeles County 2020" loading="lazy" />
+            <img src="images/kelp-map.jpg" alt="Southern California Giant Kelp Forests Under Heat Stress, March 2026" loading="lazy" />
+            <div class="map-hover-hint">click to expand</div>
           </div>
           <figcaption>
-            <span class="map-n">02</span>
+            <span class="map-n">01</span>
             <div>
-              <h3>Fault Lines &amp; Population Density, LA County</h3>
-              <p>Overlaid USGS quaternary fault data against 2020 census population density to visualize seismic exposure across the county. Historic faults run directly through the most densely populated corridors.</p>
-              <p class="map-src">Data: US Census Bureau &middot; USGS Quaternary Fault and Fold Database</p>
+              <h3>Kelp Forests Under Heat Stress</h3>
+              <p>Mapped kelp occurrences against NOAA sea surface temps to find stress zones off the Southern California coast. The red boundary marks where the next generation of kelp is at risk.</p>
+              <p class="map-src">NOAA &middot; GBIF &middot; Natural Earth</p>
             </div>
           </figcaption>
         </figure>
 
-        <figure class="map-item">
-          <div class="map-img">
-            <img src="images/crime-map.jpg" alt="Most Common Crime Type by LAPD Division, 2025" loading="lazy" />
-          </div>
-          <figcaption>
-            <span class="map-n">03</span>
-            <div>
-              <h3>Most Common Crime Type by LAPD Division</h3>
-              <p>Choropleth map of dominant crime categories across all LAPD divisions in 2025 using NIBRS offense data. Grand theft auto dominates much of the city; petty theft concentrates in commercial corridors.</p>
-              <p class="map-src">Data: LAPD NIBRS Offenses Dataset &middot; LAPD Divisions Boundary Layer</p>
+        <div class="map-col">
+          <figure class="map-card" data-modal="1">
+            <div class="map-img">
+              <img src="images/fault-map.jpg" alt="Fault Lines and Population Density, Los Angeles County 2020" loading="lazy" />
+              <div class="map-hover-hint">click to expand</div>
             </div>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+            <figcaption>
+              <span class="map-n">02</span>
+              <div>
+                <h3>Fault Lines &amp; Population Density</h3>
+                <p>USGS quaternary fault data over 2020 census density. Historic faults run right through the densest corridors in LA County.</p>
+                <p class="map-src">US Census Bureau &middot; USGS</p>
+              </div>
+            </figcaption>
+          </figure>
 
-  <!-- OUTSIDE -->
-  <section id="outside" class="outside-section">
-    <div class="outside-wrap">
-      <img class="outside-img" src="images/swiss.jpg" alt="Michelle hiking in the Swiss Alps, 2023" />
-      <div class="outside-overlay">
-        <div class="outside-card">
-          <span class="eyebrow eyebrow-light">04 &mdash; Outside</span>
-          <h2>Outside<br/>the terminal</h2>
+          <figure class="map-card" data-modal="2">
+            <div class="map-img">
+              <img src="images/crime-map.jpg" alt="Most Common Crime Type by LAPD Division, 2025" loading="lazy" />
+              <div class="map-hover-hint">click to expand</div>
+            </div>
+            <figcaption>
+              <span class="map-n">03</span>
+              <div>
+                <h3>Crime Type by LAPD Division</h3>
+                <p>Dominant crime categories across all LAPD divisions in 2025 using NIBRS offense data. Grand theft auto dominates most of the city.</p>
+                <p class="map-src">LAPD NIBRS &middot; LAPD Boundary Layer</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Outside strip -->
+      <div class="outside-strip">
+        <div class="outside-strip-img">
+          <img src="images/swiss.jpg" alt="Michelle hiking near the Matterhorn, Swiss Alps 2023" />
+        </div>
+        <div class="outside-strip-text">
           <p>
-            I grew up in LA so I came to mountains late &mdash; but I made up for lost time.
-            That trip to Switzerland in 2023 was when I started taking the outdoors seriously.
-            A year and a half later I ran my first marathon. Most weekends you'll find me
-            somewhere in the San Gabriels or out toward Malibu.
+            I grew up in LA, so mountains came late. Switzerland in 2023 changed that.
+            A year and a half later I ran my first marathon. Now most weekends find me
+            somewhere in the San Gabriels. Spending that much time reading terrain is
+            probably what made spatial data click — maps are just paying attention, rendered.
           </p>
-          <p>
-            There's something about terrain that requires you to understand it &mdash;
-            where water runs, where the ridge breaks, how elevation changes the whole character
-            of a place. I think that's part of why GIS clicked for me.
-            Maps are just a way of paying attention.
-          </p>
-          <p class="outside-loc">Bernese Oberland, Switzerland &mdash; 2023</p>
+          <span class="outside-loc">Bernese Oberland, Switzerland &mdash; 2023</span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- MAP MODAL -->
+  <div class="modal" id="mapModal" role="dialog" aria-modal="true" aria-label="Map detail">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-inner">
+      <img class="modal-img" id="modalImg" src="" alt="" />
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="contact-inner">
-        <span class="eyebrow">05 &mdash; Contact</span>
-        <h2 class="contact-h">
-          Let's build something<br/><em>that matters.</em>
-        </h2>
+        <span class="eyebrow">04 &mdash; Contact</span>
+        <h2 class="contact-h">Say hello.</h2>
         <p class="contact-body">
-          I'm looking for roles in climate tech, clean energy, and environmental data &mdash;
-          especially where backend systems, APIs, and pipelines are core to the work.
-          If you're building infrastructure for a cleaner grid, I'd love to talk.
+          Looking for roles in climate tech and clean energy.
+          Open to other interesting problems too.
         </p>
         <a href="mailto:michellenavarro83@gmail.com" class="btn btn-large">
           michellenavarro83@gmail.com &rarr;
