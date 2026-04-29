@@ -411,26 +411,31 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
-  width: 2rem;
-  height: 2rem;
+  width: 2.6rem;
+  height: 2.6rem;
   border-radius: 50%;
-  border: 1px solid var(--border-mid);
-  background: rgba(246,243,236,0.92);
-  backdrop-filter: blur(6px);
-  color: var(--ink-mid);
-  font-size: 0.85rem;
+  border: 1.5px solid var(--kelp-mid);
+  background: var(--paper);
+  backdrop-filter: blur(8px);
+  color: var(--kelp);
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(28,27,22,0.1);
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 3px 14px rgba(28,27,22,0.18);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
   padding: 0;
   line-height: 1;
 }
-.scroll-arrow:hover { background: var(--paper-dark); color: var(--kelp); }
-.scroll-arrow-left  { left: 0.4rem; }
-.scroll-arrow-right { right: 0.4rem; }
+.scroll-arrow:hover {
+  background: var(--kelp);
+  color: var(--paper);
+  border-color: var(--kelp);
+  transform: translateY(-50%) scale(1.08);
+}
+.scroll-arrow-left  { left: 0.5rem; }
+.scroll-arrow-right { right: 0.5rem; }
 .scroll-arrow[hidden] { display: none; }
 .maps-section .scroll-track::after {
   background: linear-gradient(to right, transparent, rgba(237,232,221,0.95));
@@ -695,7 +700,7 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   width: 80px;
   background: linear-gradient(to right, transparent, var(--paper-warm));
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
   transition: opacity 0.25s;
 }
 .trail-outer.trail-scroll-end::after { opacity: 0; }
