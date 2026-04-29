@@ -82,15 +82,39 @@ const revealObs = new IntersectionObserver(entries => {
 
 revealEls.forEach(el => revealObs.observe(el));
 
-// Scroll-end fade detection
-document.querySelectorAll('.project-grid, .maps-scroll').forEach(el => {
-  const track = el.closest('.scroll-track');
-  if (!track) return;
-  const check = () => {
-    track.classList.toggle('scroll-end', el.scrollLeft + el.clientWidth >= el.scrollWidth - 8);
+// ── Scroll track arrows ───────────────────────────────────
+document.querySelectorAll('.scroll-track').forEach(track => {
+  const el = track.querySelector('.project-grid, .maps-scroll');
+  if (!el) return;
+
+  const btnL = document.createElement('button');
+  btnL.className = 'scroll-arrow scroll-arrow-left';
+  btnL.innerHTML = '&#8592;';
+  btnL.setAttribute('aria-label', 'Scroll left');
+
+  const btnR = document.createElement('button');
+  btnR.className = 'scroll-arrow scroll-arrow-right';
+  btnR.innerHTML = '&#8594;';
+  btnR.setAttribute('aria-label', 'Scroll right');
+
+  track.appendChild(btnL);
+  track.appendChild(btnR);
+
+  const cardWidth = () => (el.querySelector('.project, .map-card')?.offsetWidth ?? 320) + 20;
+
+  btnL.addEventListener('click', () => el.scrollBy({ left: -cardWidth(), behavior: 'smooth' }));
+  btnR.addEventListener('click', () => el.scrollBy({ left:  cardWidth(), behavior: 'smooth' }));
+
+  const update = () => {
+    const atStart = el.scrollLeft <= 4;
+    const atEnd   = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
+    btnL.hidden = atStart;
+    btnR.hidden = atEnd;
+    track.classList.toggle('scroll-end', atEnd);
   };
-  check();
-  el.addEventListener('scroll', check, { passive: true });
+
+  update();
+  el.addEventListener('scroll', update, { passive: true });
 });
 
 // Stagger grids

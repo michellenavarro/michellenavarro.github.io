@@ -394,6 +394,33 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   transition: opacity 0.25s;
 }
 .scroll-track.scroll-end::after { opacity: 0; }
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-mid);
+  background: rgba(246,243,236,0.92);
+  backdrop-filter: blur(6px);
+  color: var(--ink-mid);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(28,27,22,0.1);
+  transition: background 0.2s, color 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+.scroll-arrow:hover { background: var(--paper-dark); color: var(--kelp); }
+.scroll-arrow-left  { left: 0.4rem; }
+.scroll-arrow-right { right: 0.4rem; }
+.scroll-arrow[hidden] { display: none; }
 .maps-section .scroll-track::after {
   background: linear-gradient(to right, transparent, rgba(237,232,221,0.95));
 }
