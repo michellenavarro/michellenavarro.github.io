@@ -26,8 +26,8 @@ const mapData = [
     caption: 'Fault Lines & Population Density, Los Angeles County 2020 · US Census Bureau · USGS'
   },
   {
-    src: 'images/crime-map.jpg',
-    caption: 'Most Common Crime Type by LAPD Division, 2025 · LAPD NIBRS · LAPD Boundary Layer'
+    src: 'images/water-storage.jpg',
+    caption: 'Global Change in Water Storage, 2000–2022 · NASA'
   }
 ];
 
