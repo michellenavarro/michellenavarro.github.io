@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /MichelleNavarroResume.pdf
+Disallow: /mnresume.pdf
