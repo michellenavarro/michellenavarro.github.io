@@ -507,11 +507,14 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
 /* Skills */
 .skills-block {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
   border-top: 1px solid var(--border);
   padding-top: 3.5rem;
   margin-top: 4rem;
+}
+.skills-block > h3 {
+  grid-column: 1 / -1;
 }
 .skill-group { padding: 0.25rem; }
 .skill-group h4 {
