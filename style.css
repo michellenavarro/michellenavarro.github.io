@@ -893,6 +893,14 @@ h2 em { font-style: italic; color: var(--kelp); font-weight: 400; }
   scroll-snap-align: start;
 }
 .maps-scroll .map-card .map-img { height: 260px; }
+.maps-scroll .map-card-link {
+  flex: 0 0 380px;
+  scroll-snap-align: start;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.map-card-link .map-card { flex: none; height: 100%; }
 
 .map-card {
   border: 1px solid var(--border-mid);

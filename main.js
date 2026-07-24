@@ -47,6 +47,7 @@ const modalClose = document.getElementById('modalClose');
 document.querySelectorAll('.map-card').forEach(card => {
   card.addEventListener('click', () => {
     const idx = parseInt(card.dataset.modal, 10);
+    if (Number.isNaN(idx)) return;
     const d = mapData[idx];
     modalImg.src = d.src;
     modalImg.alt = d.caption;
