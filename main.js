@@ -28,6 +28,14 @@ const mapData = [
   {
     src: 'images/water-storage.jpg',
     caption: 'Global Change in Water Storage, 2000–2022 · NASA'
+  },
+  {
+    src: 'images/waterfalls-map.jpg',
+    caption: 'Waterfalls of Cape Breton Island · Heather Smith · Jason Tufts · Abvhiael Crowley · Esri'
+  },
+  {
+    src: 'images/lapd-crime-map.jpg',
+    caption: 'Most Common Crimes in Los Angeles by LAPD Division, 2025 · LAPD NIBRS Offenses Dataset · LAPD Divisions Boundary Layer · Natural Earth'
   }
 ];
 
