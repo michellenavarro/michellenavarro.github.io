@@ -68,7 +68,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 
 // ── Scroll reveal ─────────────────────────────────────────
 const revealEls = document.querySelectorAll(
-  '.trail-map, .skill-group, .map-card, .outside-strip, ' +
+  '.exp-block, .skill-group, .map-card, .outside-strip, ' +
   '.about-right p, .btn-row, .contact-h, .contact-body, ' +
   '.contact-section .btn-large, .section-hd'
 );
@@ -133,86 +133,30 @@ document.querySelectorAll('.maps-scroll, .skills-block').forEach(grid => {
   });
 });
 
-// ── Trail map era buttons ─────────────────────────────────
-const trailScroll = document.getElementById('trailScroll');
-const trailEraBtns = document.querySelectorAll('.trail-era-btn');
-const trailStops = document.querySelectorAll('.trail-stop');
-const trailSeps = document.querySelectorAll('.trail-era-sep');
-
-// Converts an element's current on-screen position to its absolute scroll target
-// within trailScroll — works regardless of offsetParent chain.
-function trailScrollTarget(el, offset = 0) {
-  const elRect = el.getBoundingClientRect();
-  const containerRect = trailScroll.getBoundingClientRect();
-  return trailScroll.scrollLeft + elRect.left - containerRect.left - offset;
-}
-
-if (trailScroll) {
-  // ── Arrows ────────────────────────────────────────────────
-  const trailOuter = trailScroll.closest('.trail-outer');
-  if (trailOuter) {
-    const btnL = document.createElement('button');
-    btnL.className = 'scroll-arrow scroll-arrow-left';
-    btnL.innerHTML = '&#8592;';
-    btnL.setAttribute('aria-label', 'Scroll left');
-
-    const btnR = document.createElement('button');
-    btnR.className = 'scroll-arrow scroll-arrow-right';
-    btnR.innerHTML = '&#8594;';
-    btnR.setAttribute('aria-label', 'Scroll right');
-
-    trailOuter.appendChild(btnL);
-    trailOuter.appendChild(btnR);
-
-    const step = () => (trailScroll.querySelector('.trail-stop')?.offsetWidth ?? 230) + 16;
-
-    btnL.addEventListener('click', () => trailScroll.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
-    btnR.addEventListener('click', () => trailScroll.scrollBy({ left:  step() * 2, behavior: 'smooth' }));
-
-    const updateArrows = () => {
-      const atStart = trailScroll.scrollLeft <= 4;
-      const atEnd   = trailScroll.scrollLeft + trailScroll.clientWidth >= trailScroll.scrollWidth - 8;
-      btnL.hidden = atStart;
-      btnR.hidden = atEnd;
-      trailOuter.classList.toggle('trail-scroll-end', atEnd);
-    };
-
-    updateArrows();
-    trailScroll.addEventListener('scroll', updateArrows, { passive: true });
-  }
-
-  // ── Marker click → center that stop ───────────────────────
-  trailStops.forEach(stop => {
-    const marker = stop.querySelector('.tsm-wrap');
-    if (!marker) return;
-    marker.addEventListener('click', () => {
-      const target = trailScrollTarget(stop) + stop.offsetWidth / 2 - trailScroll.clientWidth / 2;
-      trailScroll.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
-    });
+// ── Collapsible sections (slide in horizontally) ───────────
+document.querySelectorAll('.section-hd-toggle').forEach(hd => {
+  const body = document.getElementById(hd.getAttribute('aria-controls'));
+  if (!body) return;
+  const toggle = () => {
+    const expanded = hd.getAttribute('aria-expanded') === 'true';
+    hd.setAttribute('aria-expanded', String(!expanded));
+    if (expanded) {
+      body.classList.remove('is-open');
+      body.addEventListener('transitionend', () => { body.hidden = true; }, { once: true });
+    } else {
+      body.hidden = false;
+      body.querySelectorAll('.maps-scroll, .project-grid').forEach(el => el.dispatchEvent(new Event('scroll')));
+      requestAnimationFrame(() => body.classList.add('is-open'));
+    }
+  };
+  hd.addEventListener('click', toggle);
+  hd.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
   });
-
-  // ── Era pill buttons ───────────────────────────────────────
-  trailEraBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const era = btn.dataset.era;
-      const alreadyActive = btn.classList.contains('active');
-
-      trailEraBtns.forEach(b => b.classList.remove('active'));
-      trailStops.forEach(s => s.classList.remove('dimmed'));
-      trailSeps.forEach(s => s.classList.remove('dimmed'));
-
-      if (!alreadyActive) {
-        btn.classList.add('active');
-        trailStops.forEach(s => { if (s.dataset.era !== era) s.classList.add('dimmed'); });
-        trailSeps.forEach(s => { if (s.dataset.era !== era) s.classList.add('dimmed'); });
-        const anchor = document.getElementById(`trail-era-${era}`);
-        if (anchor) {
-          trailScroll.scrollTo({ left: Math.max(0, trailScrollTarget(anchor, 24)), behavior: 'smooth' });
-        }
-      }
-    });
-  });
-}
+});
 
 // ── Active nav ────────────────────────────────────────────
 const sections = document.querySelectorAll('section[id]');
